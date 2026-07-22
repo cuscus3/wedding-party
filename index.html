@@ -152,6 +152,30 @@
   }
   li.event .tag.tbd{color:var(--gold);border-color:var(--gold-dim)}
 
+  /* ---------- OPTIONS (choices, not a sequence) ---------- */
+  ul.opts{list-style:none;margin:28px 0 8px;display:flex;flex-direction:column;gap:12px}
+  li.opt{
+    display:flex;gap:16px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;
+  }
+  li.opt .opt-when{
+    flex:0 0 100px;
+    font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.08em;
+    color:var(--gold);text-transform:uppercase;padding-top:3px;
+  }
+  li.opt .opt-title{font-family:'Cormorant Garamond';font-size:21px;font-weight:600;line-height:1.2}
+  li.opt .opt-desc{color:var(--muted);font-size:14px;margin-top:3px}
+  li.opt .tag{
+    display:inline-block;margin-top:9px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage);border:1px solid var(--line);border-radius:100px;padding:3px 10px;font-weight:500;
+  }
+  li.opt .tag.tbd{color:var(--gold);border-color:var(--gold-dim)}
+  @media(max-width:470px){
+    li.opt{flex-direction:column;gap:5px}
+    li.opt .opt-when{flex:none;padding-top:0}
+  }
+
   /* ---------- CARDS ---------- */
   .card{
     background:var(--card);border:1px solid var(--line);border-radius:16px;
@@ -245,29 +269,42 @@
   <section class="day active" id="fri" role="tabpanel" aria-labelledby="tab-fri">
     <div class="day-head">
       <div class="kicker">The Day Before</div>
-      <h2>Optional hangs &amp; rehearsal</h2>
-      <p class="note">Friday is low-key. Nothing here is mandatory for the crew, it's for anyone already in town. Come to what you want.</p>
+      <h2>Options, not a schedule</h2>
+      <p class="note">Nothing on Friday is planned or required. Here's what's around and roughly when — do as much or as little as you want.</p>
     </div>
 
-    <ol class="timeline">
-      <li class="event">
-        <div class="time">Time TBD</div>
-        <div class="title">Ceremony rehearsal</div>
-        <div class="desc">Villa Terrace. Mostly family + the officiant, so groomsmen don't need to be there. Skip it unless you're around and want to swing by.</div>
-        <span class="tag tbd">Ryan will post the time in the group chat</span>
+    <ul class="opts">
+      <li class="opt">
+        <div class="opt-when">Time TBD</div>
+        <div>
+          <div class="opt-title">Ceremony rehearsal</div>
+          <div class="opt-desc">Villa Terrace. Mostly family and the officiant, so groomsmen don't need to be there.</div>
+          <span class="tag tbd">Ryan will post the time in the group chat</span>
+        </div>
       </li>
-      <li class="event key">
-        <div class="time">Late afternoon</div>
-        <div class="title">Lakefront Brewery</div>
-        <div class="desc">Casual beers and food for anyone in town early. The main Friday hang.</div>
-        <span class="tag">1872 N Commerce St</span>
+      <li class="opt">
+        <div class="opt-when">Late afternoon</div>
+        <div>
+          <div class="opt-title">Lakefront Brewery</div>
+          <div class="opt-desc">Casual beers and food for anyone in town early. Easiest place to find people.</div>
+          <span class="tag">1872 N Commerce St</span>
+        </div>
       </li>
-      <li class="event">
-        <div class="time">6:40 PM</div>
-        <div class="title">Brewers vs. Reds</div>
-        <div class="desc">Game's on if you're looking for something to do Friday night. Grab tickets if you're in.</div>
+      <li class="opt">
+        <div class="opt-when">6:40 PM</div>
+        <div>
+          <div class="opt-title">Brewers vs. Reds</div>
+          <div class="opt-desc">There's a game that night if you want something to do. Nothing is booked — grab your own tickets if you're interested.</div>
+        </div>
       </li>
-    </ol>
+      <li class="opt">
+        <div class="opt-when">Anytime</div>
+        <div>
+          <div class="opt-title">Do your own thing</div>
+          <div class="opt-desc">No obligation to show up to any of it. Saturday is the only day that matters.</div>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <!-- ===================== SATURDAY ===================== -->
