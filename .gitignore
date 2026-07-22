@@ -1,0 +1,7 @@
+# Ignore everything by default.
+# This is a personal documents folder; only the public site is tracked.
+/*
+
+# Explicitly allow the files that belong on GitHub.
+!/.gitignore
+!/index.html
