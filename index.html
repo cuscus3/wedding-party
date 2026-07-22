@@ -3,731 +3,408 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ryan's Bachelor Party 2026</title>
+<title>McCusker Wedding · Groomsmen Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+  :root{
+    --bg:#14130f;
+    --bg-2:#1c1a15;
+    --card:#211e18;
+    --line:#332f26;
+    --ivory:#efe9db;
+    --muted:#a49a86;
+    --gold:#c9a86a;
+    --gold-dim:#8f7a4d;
+    --sage:#8f9c82;
+    --shadow:0 20px 50px -20px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ivory);
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
+  }
+  a{color:inherit}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* ---------- HERO ---------- */
+  header.hero{
+    text-align:center;
+    padding:64px 22px 44px;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(201,168,106,.12), transparent 60%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'Inter';
+    text-transform:uppercase;
+    letter-spacing:.42em;
+    font-size:11px;
+    font-weight:500;
+    color:var(--gold);
+    margin-bottom:22px;
+    padding-left:.42em;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond';
+    font-weight:500;
+    font-size:clamp(46px,13vw,74px);
+    line-height:.98;
+    letter-spacing:.01em;
+  }
+  .hero .amp{color:var(--gold-dim);font-style:italic;font-weight:400}
+  .hero .sub{
+    margin-top:20px;
+    color:var(--muted);
+    font-size:14px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .hero .sub .dot{color:var(--gold);margin:0 8px}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #0f1923;
-    color: #e8e6e1;
-    min-height: 100vh;
-    line-height: 1.6;
+  /* ---------- DAY TABS ---------- */
+  nav.tabs{
+    position:sticky;top:0;z-index:20;
+    background:rgba(20,19,15,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
   }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .tabs-inner{
+    max-width:680px;margin:0 auto;
+    display:flex;
   }
-
-  /* Hero */
-  .hero {
-    position: relative;
-    padding: 60px 24px 40px;
-    background: linear-gradient(to bottom, rgba(15,25,35,0.4) 0%, rgba(15,25,35,0.7) 50%, rgba(15,25,35,0.95) 100%),
-                url('https://lh3.googleusercontent.com/gps-cs-s/AHVAweqTOeStii-jfXBngGUr3xWBfkLGDVMEss9o6pEHQAo-M1uGtWrvI6qW9bowdtwYy7Ohxf3vZwL7pp0RTB5Qd0EZ52sZH1WfqnSdUNsns8lgmemzrpjl-h0q3RosEKUwhSKVjGI6lq3ot3oT=w1600-h900') center/cover no-repeat;
-    overflow: hidden;
-    text-align: center;
+  .tab{
+    flex:1;
+    background:none;border:none;cursor:pointer;
+    color:var(--muted);
+    font-family:'Inter';font-size:12px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;
+    padding:18px 8px 15px;
+    position:relative;
+    transition:color .25s;
   }
-  .hero-dates {
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #c4956a;
-    margin-bottom: 4px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,183,77,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c4956a;
-    margin-bottom: 12px;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, #f5e6d3, #c4956a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .hero-sub {
-    font-size: 16px;
-    color: #8a9bae;
-    margin-bottom: 24px;
-  }
-
-  /* Quick Stats */
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  .stat-card {
-    background: rgba(15,25,35,0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 14px 20px;
-    min-width: 120px;
-    text-align: center;
-  }
-  .stat-card .label { font-size: 10px; color: #6b7d8e; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
-  .stat-card .value { font-size: 20px; font-weight: 700; color: #f5e6d3; }
-
-  /* Content */
-  .content { padding: 32px 0 60px; }
-
-  /* Section Cards */
-  .section {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    transition: all 0.25s;
-  }
-  .section:hover {
-    border-color: rgba(196,149,106,0.2);
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.15s;
-  }
-  .section-header:hover {
-    background: rgba(255,255,255,0.02);
-  }
-  .section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #c4956a;
-  }
-  .section-title .icon { font-size: 18px; }
-  .chevron {
-    width: 20px;
-    height: 20px;
-    color: #5a6b7c;
-    transition: transform 0.2s;
-  }
-  .section.collapsed .chevron { transform: rotate(-90deg); }
-  .section.collapsed .section-content { display: none; }
-  .section-content {
-    padding: 0 24px 24px;
+  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:19px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:2px;color:inherit}
+  .tab[aria-selected="true"]{color:var(--ivory)}
+  .tab[aria-selected="true"]::after{
+    content:"";position:absolute;left:22%;right:22%;bottom:-1px;height:2px;
+    background:var(--gold);border-radius:2px;
   }
 
-  /* Flight Info */
-  .flight-box {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-  .airport-code {
-    background: linear-gradient(135deg, #c4956a, #a07850);
-    color: #0f1923;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 20px;
-  }
-  .airport-info { flex: 1; min-width: 200px; }
-  .airport-name { font-size: 14px; color: #e8e6e1; font-weight: 500; }
-  .drive-time { font-size: 13px; color: #6b7d8e; margin-top: 4px; }
-  .drive-time strong { color: #c4956a; }
+  /* ---------- SECTIONS ---------- */
+  section.day{display:none;padding-top:40px}
+  section.day.active{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* Coordination Box */
-  .coord-box {
-    background: rgba(196,149,106,0.08);
-    border: 1px solid rgba(196,149,106,0.2);
-    border-radius: 10px;
-    padding: 20px;
+  .day-head{margin-bottom:8px}
+  .day-head .kicker{
+    color:var(--gold);font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
   }
-  .coord-box h4 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #c4956a;
-    margin-bottom: 10px;
+  .day-head h2{
+    font-family:'Cormorant Garamond';font-weight:500;font-size:34px;line-height:1.1;margin-top:6px;
   }
-  .coord-box p { font-size: 13px; color: #8a9bae; margin-bottom: 12px; }
-  .coord-items { display: flex; flex-direction: column; gap: 8px; }
-  .coord-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.04);
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    color: #e8e6e1;
-  }
+  .day-head p.note{color:var(--muted);font-size:14.5px;margin-top:10px}
 
-  /* Property Info */
-  .property-thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
+  /* ---------- TIMELINE ---------- */
+  ol.timeline{list-style:none;margin:30px 0 8px;position:relative;padding-left:6px}
+  ol.timeline::before{
+    content:"";position:absolute;left:8px;top:8px;bottom:22px;width:1px;
+    background:linear-gradient(var(--line),var(--line) 70%,transparent);
   }
-  .property-thumbnail {
-    display: block;
-    width: 140px;
-    height: 100px;
-    border-radius: 8px;
-    overflow: hidden;
+  li.event{position:relative;padding:0 0 26px 34px}
+  li.event::before{
+    content:"";position:absolute;left:3px;top:6px;width:11px;height:11px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--gold-dim);
   }
-  .property-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  li.event.key::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,106,.16)}
+  li.event .time{
+    font-family:'Inter';font-size:12.5px;font-weight:600;letter-spacing:.08em;
+    color:var(--gold);text-transform:uppercase;
   }
-  .property-thumbnail:hover img {
-    transform: scale(1.05);
+  li.event .title{font-family:'Cormorant Garamond';font-size:22px;font-weight:600;line-height:1.2;margin-top:1px}
+  li.event .desc{color:var(--muted);font-size:14px;margin-top:3px}
+  li.event .tag{
+    display:inline-block;margin-top:8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage);border:1px solid var(--line);border-radius:100px;padding:3px 10px;font-weight:500;
   }
-  .property-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .property-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: #f5e6d3;
-  }
-  .property-location { font-size: 13px; color: #6b7d8e; }
-  .view-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(135deg, #c4956a, #a07850);
-    color: #0f1923;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.15s;
-  }
-  .view-btn:hover { transform: translateY(-1px); }
+  li.event .tag.tbd{color:var(--gold);border-color:var(--gold-dim)}
 
-  /* Info Grid */
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
+  /* ---------- CARDS ---------- */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:24px 22px;margin-top:22px;box-shadow:var(--shadow);
   }
-  .info-card {
-    background: rgba(255,255,255,0.04);
-    border-radius: 8px;
-    padding: 14px 16px;
+  .card h3{
+    font-family:'Cormorant Garamond';font-size:24px;font-weight:600;margin-bottom:4px;
+    display:flex;align-items:center;gap:10px;
   }
-  .info-card .label { font-size: 10px; color: #6b7d8e; text-transform: uppercase; letter-spacing: 1px; }
-  .info-card .value { font-size: 16px; font-weight: 600; color: #e8e6e1; margin-top: 4px; }
+  .card h3 .ic{font-size:15px;color:var(--gold)}
+  .card .lead{color:var(--muted);font-size:14px;margin-bottom:16px}
 
-  /* Perks Box */
-  .perks-box {
-    background: rgba(196,149,106,0.06);
-    border: 1px solid rgba(196,149,106,0.15);
-    border-radius: 10px;
-    padding: 16px 20px;
-  }
-  .perks-box h4 { font-size: 12px; color: #c4956a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-  .perks-box p { font-size: 13px; color: #8a9bae; margin-bottom: 10px; }
-  .perks-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
-  .perks-list li {
-    background: rgba(255,255,255,0.06);
-    color: #e8e6e1;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-  }
+  .kv{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+  .kv:first-of-type{border-top:none}
+  .kv .k{flex:0 0 108px;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+  .kv .v{flex:1;color:var(--ivory)}
+  .kv .v .sm{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 
-  /* Amenities */
-  .amenities-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    background:var(--gold);color:#20180a;text-decoration:none;
+    font-family:'Inter';font-weight:600;font-size:13px;letter-spacing:.04em;
+    padding:12px 20px;border-radius:100px;transition:transform .15s,background .2s;
   }
-  .amenity {
-    background: rgba(255,255,255,0.04);
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    color: #8a9bae;
-  }
+  .btn:hover{transform:translateY(-1px);background:#d8b878}
 
-  /* Golf */
-  .golf-info { font-size: 14px; color: #8a9bae; margin-bottom: 16px; }
-  .golf-info strong { color: #c4956a; }
-  .golf-cost {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.04);
-    border: 1px dashed rgba(255,255,255,0.1);
-    padding: 14px 18px;
-    border-radius: 8px;
-    margin-bottom: 16px;
+  /* attire chips */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{
+    font-size:13px;background:var(--bg-2);border:1px solid var(--line);
+    border-radius:10px;padding:9px 13px;color:var(--ivory);
   }
-  .golf-cost .label { font-size: 13px; color: #8a9bae; }
-  .optional-tag {
-    font-size: 9px;
-    background: #c4956a;
-    color: #0f1923;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-weight: 700;
-    margin-left: 8px;
-    letter-spacing: 0.5px;
-  }
-  .golf-cost .amount { font-size: 18px; font-weight: 700; color: #f5e6d3; }
-  .golf-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(135deg, #2d5a27, #1e3d1a);
-    color: #fff;
-    padding: 14px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: transform 0.15s;
-  }
-  .golf-link:hover { transform: translateY(-2px); }
-  .golf-link .name { font-weight: 600; }
-  .golf-link .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-size: 11px; }
-  .golf-note { font-size: 12px; color: #6b7d8e; text-align: center; margin-top: 14px; }
+  .chip .o{color:var(--sage);font-size:11px;margin-left:6px;letter-spacing:.08em;text-transform:uppercase}
 
-  /* Day Cards */
-  .day {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 10px;
-    margin-bottom: 12px;
-    overflow: hidden;
+  /* callout */
+  .callout{
+    display:flex;gap:14px;background:linear-gradient(var(--bg-2),var(--bg-2));
+    border:1px solid var(--gold-dim);border-left:3px solid var(--gold);
+    border-radius:14px;padding:18px 20px;margin-top:22px;
   }
-  .day-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .day-header:hover { background: rgba(255,255,255,0.02); }
-  .day-header-left { display: flex; align-items: center; gap: 12px; }
-  .day-badge {
-    background: linear-gradient(135deg, #c4956a, #a07850);
-    color: #0f1923;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-  .day-date { font-size: 14px; color: #8a9bae; }
-  .day.collapsed .day-content { display: none; }
-  .day.collapsed .chevron { transform: rotate(-90deg); }
-  .day-content { padding: 0 20px 20px; }
+  .callout .big{font-family:'Cormorant Garamond';font-size:34px;line-height:1;color:var(--gold);font-weight:600}
+  .callout p{font-size:14px;color:var(--ivory)}
+  .callout p strong{color:var(--gold);font-weight:600}
 
-  .activities {
-    border-left: 2px solid rgba(196,149,106,0.3);
-    margin-left: 8px;
-    padding-left: 20px;
-  }
-  .activity {
-    position: relative;
-    padding: 12px 0;
-  }
-  .activity::before {
-    content: '';
-    position: absolute;
-    left: -25px;
-    top: 16px;
-    width: 10px;
-    height: 10px;
-    background: #c4956a;
-    border-radius: 50%;
-    border: 2px solid #0f1923;
-  }
-  .activity .time { font-size: 12px; font-weight: 600; color: #c4956a; }
-  .activity .desc { font-size: 15px; font-weight: 500; color: #e8e6e1; margin-top: 2px; }
-  .activity .note { font-size: 13px; color: #6b7d8e; margin-top: 2px; }
+  footer{text-align:center;padding:48px 22px 10px;color:var(--muted);font-size:12.5px;letter-spacing:.04em}
+  footer .fdot{color:var(--gold);margin:0 6px}
 
-  /* Packing Grid */
-  .packing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 8px;
-  }
-  .packing-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 0;
-    font-size: 14px;
-    color: #8a9bae;
-  }
-  .check-box {
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(255,255,255,0.15);
-    border-radius: 4px;
-    flex-shrink: 0;
-  }
-
-  /* Cost Grid */
-  .cost-grid { display: flex; flex-direction: column; gap: 10px; }
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 18px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 8px;
-  }
-  .cost-row .label { font-size: 14px; color: #8a9bae; }
-  .cost-row .amount { font-size: 16px; font-weight: 600; color: #e8e6e1; }
-  .cost-row.total {
-    background: linear-gradient(135deg, #c4956a, #a07850);
-  }
-  .cost-row.total .label, .cost-row.total .amount { color: #0f1923; }
-  .cost-row.total .amount { font-size: 20px; }
-  .cost-row.optional {
-    border: 1px dashed rgba(255,255,255,0.1);
-    background: transparent;
-  }
-  .cost-note {
-    background: rgba(196,149,106,0.08);
-    border-radius: 8px;
-    padding: 14px 18px;
-    font-size: 13px;
-    color: #8a9bae;
-    margin-top: 16px;
-    text-align: center;
-  }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 40px 24px 60px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: 20px;
-  }
-  .footer .emoji { font-size: 32px; margin-bottom: 12px; }
-  .footer .tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    background: linear-gradient(135deg, #f5e6d3, #c4956a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-  }
-  .footer p { font-size: 14px; color: #6b7d8e; }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .hero { padding: 40px 20px 30px; }
-    .section-header { padding: 16px 18px; }
-    .section-content { padding: 0 18px 18px; }
-    .flight-box { padding: 16px; }
-    .day-header { padding: 14px 16px; }
-    .day-content { padding: 0 16px 16px; }
+  @media(min-width:600px){
+    .kv .k{flex:0 0 130px}
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-label">Lake Lanier, Georgia</div>
-  <h1>Ryan's Bachelor Party</h1>
-  <div class="hero-dates">Thursday – Sunday</div>
-  <div class="hero-sub">May 28 – 31, 2026</div>
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="label">Nights</div>
-      <div class="value">3</div>
-    </div>
-    <div class="stat-card">
-      <div class="label">Guests</div>
-      <div class="value">16</div>
-    </div>
-    <div class="stat-card">
-      <div class="label">Per Person (Tentative)</div>
-      <div class="value">~$328</div>
-    </div>
+<header class="hero">
+  <div class="eyebrow">The Wedding of Ryan &amp; Tanya</div>
+  <h1>Groomsmen<br><span class="amp">&amp;</span> Guide</h1>
+  <div class="sub">Milwaukee <span class="dot">·</span> Sept 11 – 13 <span class="dot">·</span> 2026</div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-day="fri">
+      Friday <span class="day-label">Sept 11</span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" data-day="sat">
+      Saturday <span class="day-label">Sept 12</span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" data-day="sun">
+      Sunday <span class="day-label">Sept 13</span>
+    </button>
   </div>
-</div>
+</nav>
 
-<div class="container">
-  <div class="content">
+<main class="wrap">
 
-    <div class="section" id="flights">
-      <div class="section-header" onclick="toggle('flights')">
-        <div class="section-title"><span class="icon">✈️</span> Getting There</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-        <div class="flight-box">
-          <div class="airport-code">ATL</div>
-          <div class="airport-info">
-            <div class="airport-name">Hartsfield-Jackson Atlanta International</div>
-            <div class="drive-time"><strong>~1 hour</strong> drive to Lake Lanier</div>
-          </div>
-        </div>
-        <div class="coord-box">
-          <h4>Let's Coordinate</h4>
-          <p>Drop your flight times in the group chat so we can figure out rides & carpools.</p>
-          <div class="coord-items">
-            <div class="coord-item"><span>🛬</span> Share your arrival time</div>
-            <div class="coord-item"><span>🚙</span> Anyone renting a car?</div>
-            <div class="coord-item"><span>👥</span> We'll organize carpools</div>
-          </div>
-        </div>
+  <!-- ===================== FRIDAY ===================== -->
+  <section class="day active" id="fri">
+    <div class="day-head">
+      <div class="kicker">The Day Before</div>
+      <h2>Optional hangs &amp; rehearsal</h2>
+      <p class="note">Friday is low-key. Nothing here is mandatory for the crew, it's for anyone already in town. Come to what you want.</p>
+    </div>
+
+    <ol class="timeline">
+      <li class="event">
+        <div class="time">Time TBD</div>
+        <div class="title">Ceremony rehearsal</div>
+        <div class="desc">Villa Terrace. Mostly family + the officiant, so groomsmen don't need to be there. Skip it unless you're around and want to swing by.</div>
+        <span class="tag tbd">Ryan will post the time in the group chat</span>
+      </li>
+      <li class="event key">
+        <div class="time">Late afternoon</div>
+        <div class="title">Lakefront Brewery</div>
+        <div class="desc">Casual beers and food for anyone in town early. The main Friday hang.</div>
+        <span class="tag">1872 N Commerce St</span>
+      </li>
+      <li class="event">
+        <div class="time">6:40 PM</div>
+        <div class="title">Brewers vs. Reds</div>
+        <div class="desc">Game's on if you're looking for something to do Friday night. Grab tickets if you're in.</div>
+      </li>
+    </ol>
+
+    <div class="callout">
+      <div class="big">“</div>
+      <p>Friday is <strong>fully optional</strong>. No suits, no schedule to keep. Just show up to the brewery if you're in Milwaukee and want a beer before the big day.</p>
+    </div>
+  </section>
+
+  <!-- ===================== SATURDAY ===================== -->
+  <section class="day" id="sat">
+    <div class="day-head">
+      <div class="kicker">Wedding Day</div>
+      <h2>The full run of show</h2>
+      <p class="note">The full run of show, wake-up through send-off. The one hard deadline: be at the venue by 12:30.</p>
+    </div>
+
+    <ol class="timeline">
+      <li class="event">
+        <div class="time">6:30 AM</div>
+        <div class="title">Wake up</div>
+      </li>
+      <li class="event">
+        <div class="time">7:00 – 8:00 AM</div>
+        <div class="title">Workout</div>
+        <div class="desc">Back around 8:45.</div>
+      </li>
+      <li class="event">
+        <div class="time">9:00 – 11:00 AM</div>
+        <div class="title">Breakfast &amp; hang</div>
+        <div class="desc">Brunch, golf sim, pool.</div>
+      </li>
+      <li class="event key">
+        <div class="time">11:00 AM</div>
+        <div class="title">Head home &amp; get dressed</div>
+        <div class="desc">Shower, get into your tux, then Uber to the venue.</div>
+      </li>
+      <li class="event key">
+        <div class="time">12:30 PM</div>
+        <div class="title">Arrive at Villa Terrace</div>
+        <div class="desc">Suite access opens and photographers start right at 12:30.</div>
+        <span class="tag">Hard deadline</span>
+      </li>
+      <li class="event">
+        <div class="time">1:30 PM</div>
+        <div class="title">First look</div>
+        <div class="desc">Ryan &amp; Tanya's first look, then group photos with the crew.</div>
+      </li>
+      <li class="event key">
+        <div class="time">4:00 PM</div>
+        <div class="title">Ceremony</div>
+        <div class="desc">Doors / seating from 3:30. Ceremony starts at 4:00 sharp in the gardens.</div>
+      </li>
+      <li class="event">
+        <div class="time">4:30 PM</div>
+        <div class="title">Cocktail hour</div>
+        <div class="desc">Prosecco cart at the entrance. The wedding party may get pulled for photos during this.</div>
+      </li>
+      <li class="event">
+        <div class="time">6:45 PM</div>
+        <div class="title">Dinner</div>
+        <div class="desc">Seated dinner on the terrace.</div>
+      </li>
+      <li class="event">
+        <div class="time">~7:00 PM</div>
+        <div class="title">Sunset photos</div>
+        <div class="desc">Ryan &amp; Tanya step out for golden-hour shots. Part of the crew may be pulled in briefly.</div>
+      </li>
+      <li class="event">
+        <div class="time">~10:00 PM</div>
+        <div class="title">Last call</div>
+        <div class="desc">Bar closes before the send-off.</div>
+      </li>
+      <li class="event key">
+        <div class="time">10:15 PM</div>
+        <div class="title">Send-off</div>
+        <div class="desc">Guests gather for the send-off. Reception wraps at 10:30.</div>
+      </li>
+      <li class="event">
+        <div class="time">After 10:30 PM</div>
+        <div class="title">After-party</div>
+        <div class="desc">Informal. Location and details will drop in the group chat.</div>
+        <span class="tag tbd">TBD</span>
+      </li>
+    </ol>
+
+    <div class="callout">
+      <div class="big">!</div>
+      <p><strong>Be at the venue by 12:30 PM.</strong> Photographers start the second you arrive, so every late arrival pushes the whole photo schedule back.</p>
+    </div>
+
+    <!-- ATTIRE -->
+    <div class="card">
+      <h3><span class="ic">◆</span> What to wear</h3>
+      <p class="lead">The Black Tux 9-piece. Full black-tie. A few notes on what's required vs. optional:</p>
+      <div class="chips">
+        <span class="chip">Tuxedo jacket</span>
+        <span class="chip">Tux pants</span>
+        <span class="chip">White dress shirt</span>
+        <span class="chip">Black bow tie</span>
+        <span class="chip">Patent leather shoes</span>
+        <span class="chip">Onyx cufflinks + studs</span>
+        <span class="chip">Pocket square</span>
+        <span class="chip">Vest <span class="o">optional</span></span>
+        <span class="chip">Socks <span class="o">Ryan's got these</span></span>
       </div>
     </div>
 
-    <div class="section" id="property">
-      <div class="section-header" onclick="toggle('property')">
-        <div class="section-title"><span class="icon">🏠</span> The Property</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    <!-- VENUE -->
+    <div class="card">
+      <h3><span class="ic">◆</span> The venue</h3>
+      <div class="kv">
+        <div class="k">Location</div>
+        <div class="v">Villa Terrace Museum &amp; Gardens<span class="sm">2220 N Terrace Ave, Milwaukee, WI 53202</span></div>
       </div>
-      <div class="section-content">
-        <div class="property-thumbnails">
-          <a href="https://www.houfy.com/115424" target="_blank" class="property-thumbnail">
-            <img src="https://www.assets.houfy.com/assets/images/properties/115424/48129303516aa018ffc346fd50f70e0e.jpg" alt="Sunrise Villa">
-          </a>
-          <a href="https://www.houfy.com/115424" target="_blank" class="property-thumbnail">
-            <img src="https://www.assets.houfy.com/assets/images/properties/115424/c3d5181909c266a8d66fc118f533503b.jpg" alt="Sunrise Villa">
-          </a>
-        </div>
-        <div class="property-header">
-          <div>
-            <div class="property-name">Sunrise Villa</div>
-            <div class="property-location">Flowery Branch, Georgia</div>
-          </div>
-          <a href="https://www.houfy.com/115424" target="_blank" class="view-btn">View Listing →</a>
-        </div>
-        <div class="info-grid">
-          <div class="info-card"><div class="label">Guests</div><div class="value">16 people</div></div>
-          <div class="info-card"><div class="label">Check In</div><div class="value">Thu, May 28</div></div>
-          <div class="info-card"><div class="label">Check Out</div><div class="value">Sun, May 31</div></div>
-          <div class="info-card"><div class="label">Nights</div><div class="value">3</div></div>
-        </div>
-        <div class="perks-box">
-          <h4>Petree House Access</h4>
-          <p>Right around the corner — we've got access to:</p>
-          <ul class="perks-list">
-            <li>🚤 Boats</li>
-            <li>🛟 Floaties</li>
-            <li>👨 Mark Petree</li>
-            <li>🥜 Boiled Peanuts</li>
-          </ul>
-        </div>
+      <div class="kv">
+        <div class="k">Getting there</div>
+        <div class="v">Uber / Lyft recommended. Neighborhood parking is tight.<span class="sm">Pickup + ride details will go in the group chat.</span></div>
       </div>
+      <div class="kv">
+        <div class="k">Arrival</div>
+        <div class="v">12:30 PM — dressed and ready</div>
+      </div>
+      <a class="btn" href="https://maps.google.com/?q=Villa+Terrace+Museum+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">Open in Maps →</a>
+    </div>
+  </section>
+
+  <!-- ===================== SUNDAY ===================== -->
+  <section class="day" id="sun">
+    <div class="day-head">
+      <div class="kicker">The Morning After</div>
+      <h2>Coffee before you head out</h2>
+      <p class="note">Casual send-off for anyone still in town Sunday morning before flights. Come if you can.</p>
     </div>
 
-    <div class="section" id="amenities">
-      <div class="section-header" onclick="toggle('amenities')">
-        <div class="section-title"><span class="icon">✨</span> Amenities</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-        <div class="amenities-grid">
-          <span class="amenity">🏊 Pool</span>
-          <span class="amenity">🛁 Hot Tub</span>
-          <span class="amenity">🚤 Waterfront</span>
-          <span class="amenity">🛥️ Boat Dock</span>
-          <span class="amenity">🛶 Kayaks</span>
-          <span class="amenity">🎱 Game Room</span>
-          <span class="amenity">🔥 Fire Pit</span>
-          <span class="amenity">🍳 Full Kitchen</span>
-        </div>
-      </div>
+    <ol class="timeline">
+      <li class="event key">
+        <div class="time">Sunday morning</div>
+        <div class="title">Coffee at Colectivo</div>
+        <div class="desc">Drop-in coffee to say goodbye before everyone flies out. No program, just come through.</div>
+        <span class="tag tbd">Time + location in the group chat</span>
+      </li>
+    </ol>
+
+    <div class="callout">
+      <div class="big">“</div>
+      <p>Fully casual, <strong>come if you can</strong>. Grab a coffee and say bye before you head to the airport.</p>
     </div>
+  </section>
 
-    <div class="section" id="golf">
-      <div class="section-header" onclick="toggle('golf')">
-        <div class="section-title"><span class="icon">⛳</span> Golf (Optional)</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-        <p class="golf-info">There's a great course at Lake Lanier Islands — <strong>totally optional</strong>. Let us know in the group chat if you want in so we can get a headcount and book a tee time.</p>
-        <div class="golf-cost">
-          <span class="label">Estimated cost<span class="optional-tag">OPTIONAL</span></span>
-          <span class="amount">$170–200/person</span>
-        </div>
-        <a href="https://www.google.com/search?q=Lake+Lanier+Islands+Golf" target="_blank" class="golf-link">
-          <span class="name">⛳ Lake Lanier Islands Golf</span>
-          <span class="badge">VIEW →</span>
-        </a>
-        <p class="golf-note">Don't feel pressured — plenty of lake time for non-golfers!</p>
-      </div>
-    </div>
+</main>
 
-    <div class="section" id="itinerary">
-      <div class="section-header" onclick="toggle('itinerary')">
-        <div class="section-title"><span class="icon">📅</span> The Itinerary</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-
-        <div class="day" id="day1">
-          <div class="day-header" onclick="toggleDay('day1')">
-            <div class="day-header-left">
-              <span class="day-badge">DAY 1</span>
-              <span class="day-date">Thursday, May 28</span>
-            </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="day-content">
-            <div class="activities">
-              <div class="activity"><div class="time">3:00 PM</div><div class="desc">Check-in & settle in</div><div class="note">Claim rooms, explore the property</div></div>
-              <div class="activity"><div class="time">5:00 PM</div><div class="desc">Pool & lake time</div><div class="note">First beers, floaties</div></div>
-              <div class="activity"><div class="time">7:00 PM</div><div class="desc">Grill out or order food</div><div class="note">Steaks, burgers, brats</div></div>
-              <div class="activity"><div class="time">9:00 PM</div><div class="desc">Fire pit & games</div><div class="note">Poker, drinking games</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day" id="day2">
-          <div class="day-header" onclick="toggleDay('day2')">
-            <div class="day-header-left">
-              <span class="day-badge">DAY 2</span>
-              <span class="day-date">Friday, May 29</span>
-            </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="day-content">
-            <div class="activities">
-              <div class="activity"><div class="time">9:00 AM</div><div class="desc">Breakfast & coffee</div></div>
-              <div class="activity"><div class="time">10:30 AM</div><div class="desc">Boat & float day at the Petrees</div><div class="note">Tubing, lake cruising</div></div>
-              <div class="activity"><div class="time">2:00 PM</div><div class="desc">Chill time</div></div>
-              <div class="activity"><div class="time">5:00 PM</div><div class="desc">Game day tournament</div><div class="note">Pong, spikeball, bags, pool, ping pong</div></div>
-              <div class="activity"><div class="time">8:00 PM</div><div class="desc">Dinner & poker night</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day" id="day3">
-          <div class="day-header" onclick="toggleDay('day3')">
-            <div class="day-header-left">
-              <span class="day-badge">DAY 3</span>
-              <span class="day-date">Saturday, May 30</span>
-            </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="day-content">
-            <div class="activities">
-              <div class="activity"><div class="time">8:00 AM</div><div class="desc">Golf at Lake Lanier Islands</div><div class="note">Optional — $170–200/person</div></div>
-              <div class="activity"><div class="time">12:00 PM</div><div class="desc">Brunch at Pelican Pete's or Twisted Oar</div></div>
-              <div class="activity"><div class="time">2:00 PM</div><div class="desc">Lake time round 2</div><div class="note">More boat, more floaties</div></div>
-              <div class="activity"><div class="time">6:00 PM</div><div class="desc">Boat cruise & dinner at Pelican Pete's or Twisted Oar</div></div>
-              <div class="activity"><div class="time">9:00 PM</div><div class="desc">Final night celebration</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day" id="day4">
-          <div class="day-header" onclick="toggleDay('day4')">
-            <div class="day-header-left">
-              <span class="day-badge">DAY 4</span>
-              <span class="day-date">Sunday, May 31</span>
-            </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="day-content">
-            <div class="activities">
-              <div class="activity"><div class="time">10:00 AM</div><div class="desc">Pack up & clean</div></div>
-              <div class="activity"><div class="time">11:00 AM</div><div class="desc">Check out</div><div class="note">Safe travels home!</div></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="section" id="packing">
-      <div class="section-header" onclick="toggle('packing')">
-        <div class="section-title"><span class="icon">🎒</span> What to Bring</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-        <div class="packing-grid">
-          <div class="packing-item"><span class="check-box"></span> A good attitude</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="cost">
-      <div class="section-header" onclick="toggle('cost')">
-        <div class="section-title"><span class="icon">💰</span> Cost Breakdown</div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="section-content">
-        <div class="cost-grid">
-          <div class="cost-row"><span class="label">Sunrise Villa (3 nights)</span><span class="amount">$5,243</span></div>
-          <div class="cost-row"><span class="label">÷ 16 people</span><span class="amount">$328 each</span></div>
-          <div class="cost-row optional"><span class="label">Golf<span class="optional-tag">OPTIONAL</span></span><span class="amount">$170–200</span></div>
-          <div class="cost-row total"><span class="label">Your share (housing only)</span><span class="amount">~$328</span></div>
-        </div>
-        <div class="cost-note">Final price depends on headcount. No payment needed yet — we'll sort it out in the group chat once we know who's in.</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="footer">
-  <div class="emoji">🍻</div>
-  <div class="tagline">Let's send Ryan off in style!</div>
-  <p>Confirm in the group chat if you can make it</p>
-</div>
+<footer>
+  Questions? Hit the groomsmen group chat.
+  <div style="margin-top:8px">Ryan <span class="fdot">◆</span> Tanya <span class="fdot">◆</span> 09 · 12 · 2026</div>
+</footer>
 
 <script>
-function toggle(id) {
-  document.getElementById(id).classList.toggle('collapsed');
-}
-function toggleDay(id) {
-  document.getElementById(id).classList.toggle('collapsed');
-}
+  const tabs = document.querySelectorAll('.tab');
+  const days = document.querySelectorAll('section.day');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      const d = tab.dataset.day;
+      tabs.forEach(t=>t.setAttribute('aria-selected', t===tab ? 'true':'false'));
+      days.forEach(s=>s.classList.toggle('active', s.id===d));
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
 </script>
 
 </body>
