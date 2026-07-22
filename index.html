@@ -69,6 +69,13 @@
     text-transform:uppercase;
   }
   .hero .sub .dot{color:var(--gold);margin:0 8px}
+  .tap-hint{
+    margin-top:26px;color:var(--muted);font-size:11px;
+    letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  }
+  .tap-hint .arw{display:inline-block;color:var(--gold);margin-left:6px;animation:nudge 1.8s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  @media(prefers-reduced-motion:reduce){.tap-hint .arw{animation:none}}
 
   /* ---------- DAY TABS ---------- */
   nav.tabs{
@@ -79,24 +86,33 @@
   }
   .tabs-inner{
     max-width:680px;margin:0 auto;
-    display:flex;
+    display:flex;gap:8px;padding:10px 14px 11px;
   }
   .tab{
     flex:1;
-    background:none;border:none;cursor:pointer;
+    cursor:pointer;
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    border-radius:13px;
     color:var(--muted);
-    font-family:'Inter';font-size:12px;font-weight:500;
-    letter-spacing:.22em;text-transform:uppercase;
-    padding:18px 8px 15px;
+    font-family:'Inter';font-size:11px;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;
+    padding:10px 6px 11px;
     position:relative;
-    transition:color .25s;
+    -webkit-tap-highlight-color:transparent;
+    transition:background .2s,border-color .2s,color .2s,transform .12s;
   }
-  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:19px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:2px;color:inherit}
-  .tab[aria-selected="true"]{color:var(--ivory)}
-  .tab[aria-selected="true"]::after{
-    content:"";position:absolute;left:22%;right:22%;bottom:-1px;height:2px;
-    background:var(--gold);border-radius:2px;
+  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:20px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:3px;color:inherit}
+  .tab:hover{background:#272319;border-color:var(--gold-dim);color:var(--ivory)}
+  .tab:active{transform:scale(.97)}
+  .tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .tab[aria-selected="true"]{
+    background:linear-gradient(rgba(201,168,106,.17),rgba(201,168,106,.07));
+    border-color:var(--gold);
+    color:var(--ivory);
+    box-shadow:0 0 0 1px rgba(201,168,106,.22);
   }
+  .tab[aria-selected="true"] .day-label{color:var(--gold)}
 
   /* ---------- SECTIONS ---------- */
   section.day{display:none;padding-top:40px}
@@ -153,6 +169,18 @@
   .kv .k{flex:0 0 108px;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
   .kv .v{flex:1;color:var(--ivory)}
   .kv .v .sm{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+  .kv .v .pill{
+    display:inline-block;margin-top:7px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--gold-dim);border-radius:100px;padding:3px 10px;font-weight:500;
+  }
+  .kv .v .pill.yes{color:var(--sage);border-color:var(--line)}
+
+  /* section divider */
+  .divider{
+    display:flex;align-items:center;gap:14px;margin:46px 0 2px;
+    color:var(--gold);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+  }
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
 
   .btn{
     display:inline-flex;align-items:center;gap:8px;margin-top:18px;
@@ -194,17 +222,18 @@
   <div class="eyebrow">The Wedding of Ryan &amp; Tanya</div>
   <h1>Groomsmen<br><span class="amp">&amp;</span> Guide</h1>
   <div class="sub">Milwaukee <span class="dot">·</span> Sept 11 – 13 <span class="dot">·</span> 2026</div>
+  <div class="tap-hint">Tap a day to see the plan <span class="arw">↓</span></div>
 </header>
 
 <nav class="tabs">
   <div class="tabs-inner" role="tablist">
-    <button class="tab" role="tab" aria-selected="true" data-day="fri">
+    <button class="tab" role="tab" id="tab-fri" aria-controls="fri" aria-selected="true" data-day="fri">
       Friday <span class="day-label">Sept 11</span>
     </button>
-    <button class="tab" role="tab" aria-selected="false" data-day="sat">
+    <button class="tab" role="tab" id="tab-sat" aria-controls="sat" aria-selected="false" data-day="sat">
       Saturday <span class="day-label">Sept 12</span>
     </button>
-    <button class="tab" role="tab" aria-selected="false" data-day="sun">
+    <button class="tab" role="tab" id="tab-sun" aria-controls="sun" aria-selected="false" data-day="sun">
       Sunday <span class="day-label">Sept 13</span>
     </button>
   </div>
@@ -213,7 +242,7 @@
 <main class="wrap">
 
   <!-- ===================== FRIDAY ===================== -->
-  <section class="day active" id="fri">
+  <section class="day active" id="fri" role="tabpanel" aria-labelledby="tab-fri">
     <div class="day-head">
       <div class="kicker">The Day Before</div>
       <h2>Optional hangs &amp; rehearsal</h2>
@@ -242,7 +271,7 @@
   </section>
 
   <!-- ===================== SATURDAY ===================== -->
-  <section class="day" id="sat">
+  <section class="day" id="sat" role="tabpanel" aria-labelledby="tab-sat">
     <div class="day-head">
       <div class="kicker">Wedding Day</div>
       <h2>The full run of show</h2>
@@ -323,6 +352,32 @@
       <p><strong>Be at the venue by 12:30 PM.</strong> Photographers start the second you arrive, so every late arrival pushes the whole photo schedule back.</p>
     </div>
 
+    <!-- DUTIES -->
+    <div class="card">
+      <h3><span class="ic">◆</span> What you're actually doing</h3>
+      <p class="lead">Short version: show up on time, look sharp, follow the coordinator's lead. The specifics:</p>
+      <div class="kv">
+        <div class="k">Ceremony</div>
+        <div class="v">Standing up front on Ryan's side<span class="sm">Roughly 30 minutes, 4:00 to about 4:30. No speaking parts unless Ryan has already asked you.</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Processional</div>
+        <div class="v">Walking order and who you're paired with<span class="sm">Sorted at the rehearsal so nobody has to memorize anything.</span><span class="pill">Ryan will confirm</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Photos</div>
+        <div class="v">You're in the 1:30 group shots<span class="sm">Some of the crew may get pulled again around 7:00 for sunset photos. Stay reachable.</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Toasts</div>
+        <div class="v">Not your problem unless Ryan has asked you<span class="pill">Lineup TBD</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Ushering</div>
+        <div class="v">Possible help seating guests from 3:30<span class="pill">Ryan will confirm</span></div>
+      </div>
+    </div>
+
     <!-- ATTIRE -->
     <div class="card">
       <h3><span class="ic">◆</span> What to wear</h3>
@@ -357,10 +412,46 @@
       </div>
       <a class="btn" href="https://maps.google.com/?q=Villa+Terrace+Museum+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">Open in Maps →</a>
     </div>
+
+    <!-- WHAT TO BRING -->
+    <div class="card">
+      <h3><span class="ic">◆</span> Throw in your bag</h3>
+      <p class="lead">Small stuff that's annoying to need and not have:</p>
+      <div class="chips">
+        <span class="chip">Garment bag <span class="o">for the return</span></span>
+        <span class="chip">Comfortable shoes <span class="o">for late reception</span></span>
+        <span class="chip">A layer for after dark</span>
+        <span class="chip">Cash <span class="o">bar tips</span></span>
+        <span class="chip">Phone charger</span>
+        <span class="chip">Mints / deodorant</span>
+        <span class="chip">Ibuprofen</span>
+      </div>
+    </div>
+
+    <!-- WEATHER -->
+    <div class="card">
+      <h3><span class="ic">◆</span> Weather &amp; the outdoor bit</h3>
+      <div class="kv">
+        <div class="k">What's outside</div>
+        <div class="v">Ceremony in the gardens, cocktail hour, and dinner on the terrace<span class="sm">You'll be outdoors for most of the event.</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Typical Sept</div>
+        <div class="v">Low 70s during the day, 50s after sunset<span class="sm">It sits right on the lake, so it gets cooler and breezier than the forecast suggests once the sun drops.</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">Underfoot</div>
+        <div class="v">Grass and garden paths<span class="sm">Worth knowing before the ceremony if you're not used to dress shoes on turf.</span></div>
+      </div>
+      <div class="kv">
+        <div class="k">If it rains</div>
+        <div class="v">The venue has an indoor backup<span class="pill">Plan TBD</span></div>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== SUNDAY ===================== -->
-  <section class="day" id="sun">
+  <section class="day" id="sun" role="tabpanel" aria-labelledby="tab-sun">
     <div class="day-head">
       <div class="kicker">The Morning After</div>
       <h2>Coffee before you head out</h2>
@@ -377,6 +468,35 @@
     </ol>
   </section>
 
+  <!-- ============ ALWAYS VISIBLE, NOT DAY-SPECIFIC ============ -->
+  <div class="divider"><span>Good to know</span></div>
+
+  <div class="card">
+    <h3><span class="ic">◆</span> What's covered</h3>
+    <p class="lead">So nobody has to awkwardly ask what's coming out of their own pocket:</p>
+    <div class="kv">
+      <div class="k">Wedding day</div>
+      <div class="v">Dinner and the bar are on us<span class="sm">Through last call, around 10:00 PM.</span><span class="pill yes">Covered</span></div>
+    </div>
+    <div class="kv">
+      <div class="k">Tux rental</div>
+      <div class="v">The Black Tux 9-piece<span class="pill">Ryan will confirm</span></div>
+    </div>
+    <div class="kv">
+      <div class="k">Flights &amp; lodging</div>
+      <div class="v">On you, and already booked<span class="sm">Nothing left to do here.</span></div>
+    </div>
+    <div class="kv">
+      <div class="k">Fri &amp; Sun</div>
+      <div class="v">Brewery, the game, and coffee are out of pocket<span class="sm">All optional — spend what you feel like.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="ic">◆</span> Still have questions?</h3>
+    <p class="lead" style="margin-bottom:0">Anything not answered here goes in the groomsmen group chat. That's also where the rehearsal time, the after-party spot, and ride details will land, so keep an eye on it that week.</p>
+  </div>
+
 </main>
 
 <footer>
@@ -385,14 +505,32 @@
 </footer>
 
 <script>
-  const tabs = document.querySelectorAll('.tab');
-  const days = document.querySelectorAll('section.day');
-  tabs.forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      const d = tab.dataset.day;
-      tabs.forEach(t=>t.setAttribute('aria-selected', t===tab ? 'true':'false'));
-      days.forEach(s=>s.classList.toggle('active', s.id===d));
-      window.scrollTo({top:0,behavior:'smooth'});
+  const tabs = [...document.querySelectorAll('.tab')];
+  const days = [...document.querySelectorAll('section.day')];
+
+  function select(tab, moveFocus){
+    tabs.forEach(t=>{
+      const on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    days.forEach(s=>s.classList.toggle('active', s.id === tab.dataset.day));
+    if(moveFocus) tab.focus();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  tabs.forEach((tab,i)=>{
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+    tab.addEventListener('click',()=>select(tab));
+    tab.addEventListener('keydown',e=>{
+      const keys = ['ArrowRight','ArrowLeft','Home','End'];
+      if(!keys.includes(e.key)) return;
+      e.preventDefault();
+      const n = e.key === 'Home'  ? 0
+              : e.key === 'End'   ? tabs.length - 1
+              : e.key === 'ArrowRight' ? (i + 1) % tabs.length
+              : (i - 1 + tabs.length) % tabs.length;
+      select(tabs[n], true);
     });
   });
 </script>
