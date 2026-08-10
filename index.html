@@ -3,111 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>McCusker Wedding · Groomsmen Guide</title>
+<meta name="theme-color" content="#14130f">
+<meta name="description" content="Groomsmen guide for the wedding of Ryan & Tanya — Villa Terrace, Milwaukee · September 12, 2026.">
+<title>Ryan &amp; Tanya · Groomsmen Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#14130f;
-    --bg-2:#1c1a15;
+    --bg-2:#1b1914;
     --card:#211e18;
+    --card-2:#25221b;
     --line:#332f26;
+    --line-2:#403a2d;
     --ivory:#efe9db;
+    --ivory-dim:#d9d2c2;
     --muted:#a49a86;
+    --muted-2:#8a8172;
     --gold:#c9a86a;
+    --gold-2:#dcc088;
     --gold-dim:#8f7a4d;
     --sage:#8f9c82;
-    --shadow:0 20px 50px -20px rgba(0,0,0,.7);
+    --shadow:0 24px 60px -24px rgba(0,0,0,.72);
+    --shadow-sm:0 10px 30px -18px rgba(0,0,0,.7);
+    --maxw:660px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
-    background:var(--bg);
+    background:
+      radial-gradient(140% 90% at 50% -8%, rgba(201,168,106,.10), transparent 55%),
+      radial-gradient(100% 60% at 50% 108%, rgba(143,156,130,.06), transparent 60%),
+      var(--bg);
     color:var(--ivory);
-    font-family:'Inter',system-ui,sans-serif;
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
     font-weight:300;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
-    padding-bottom:64px;
+    text-rendering:optimizeLegibility;
+    padding-bottom:16px;
+    overflow-x:hidden;
   }
   a{color:inherit}
-  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ornaments */
+  .rule{display:flex;align-items:center;justify-content:center;gap:16px}
+  .rule::before,.rule::after{content:"";height:1px;width:44px;background:linear-gradient(90deg,transparent,var(--gold-dim))}
+  .rule::after{background:linear-gradient(90deg,var(--gold-dim),transparent)}
+  .diamond{color:var(--gold);font-size:9px;transform:translateY(-1px)}
 
   /* ---------- HERO ---------- */
   header.hero{
+    position:relative;
     text-align:center;
-    padding:64px 22px 44px;
-    background:
-      radial-gradient(120% 80% at 50% -10%, rgba(201,168,106,.12), transparent 60%),
-      var(--bg);
+    padding:72px 24px 48px;
     border-bottom:1px solid var(--line);
+    overflow:hidden;
   }
+  .hero .frame{
+    position:absolute;inset:16px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    pointer-events:none;
+    -webkit-mask:linear-gradient(#000,#000);
+  }
+  .hero .frame::before{
+    content:"";position:absolute;inset:6px;border:1px solid rgba(201,168,106,.16);border-radius:2px;
+  }
+  .hero-inner{position:relative}
   .eyebrow{
-    font-family:'Inter';
     text-transform:uppercase;
-    letter-spacing:.42em;
-    font-size:11px;
+    letter-spacing:.44em;
+    font-size:10.5px;
     font-weight:500;
     color:var(--gold);
-    margin-bottom:22px;
-    padding-left:.42em;
+    margin-bottom:24px;
+    padding-left:.44em;
   }
-  .hero h1{
+  .monogram{
     font-family:'Cormorant Garamond';
     font-weight:500;
-    font-size:clamp(46px,13vw,74px);
-    line-height:.98;
-    letter-spacing:.01em;
+    font-size:clamp(52px,15vw,88px);
+    line-height:.92;
+    letter-spacing:.005em;
+    color:var(--ivory);
   }
-  .hero .amp{color:var(--gold-dim);font-style:italic;font-weight:400}
-  .hero .sub{
-    margin-top:20px;
-    color:var(--muted);
-    font-size:14px;
-    letter-spacing:.16em;
+  .monogram .amp{
+    display:block;
+    font-style:italic;
+    font-weight:400;
+    font-size:.42em;
+    color:var(--gold-dim);
+    margin:2px 0;
+    letter-spacing:.04em;
+  }
+  .hero .place{
+    margin-top:22px;
+    color:var(--ivory-dim);
+    font-size:13px;
+    letter-spacing:.24em;
     text-transform:uppercase;
+    font-weight:400;
   }
-  .hero .sub .dot{color:var(--gold);margin:0 8px}
+  .hero .datebar{
+    margin-top:18px;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    color:var(--muted);
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .hero .datebar b{color:var(--gold);font-weight:500}
+  .hero .datebar .sep{width:4px;height:4px;border-radius:50%;background:var(--gold-dim);display:inline-block}
+  .hero .label{
+    margin-top:30px;
+    display:inline-block;
+    font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;
+    color:var(--ivory);
+    border:1px solid var(--gold-dim);
+    border-radius:100px;
+    padding:8px 18px;
+    background:linear-gradient(rgba(201,168,106,.10),rgba(201,168,106,.03));
+  }
   .tap-hint{
-    margin-top:26px;color:var(--muted);font-size:11px;
-    letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+    margin-top:26px;color:var(--muted-2);font-size:10.5px;
+    letter-spacing:.24em;text-transform:uppercase;font-weight:500;
   }
-  .tap-hint .arw{display:inline-block;color:var(--gold);margin-left:6px;animation:nudge 1.8s ease-in-out infinite}
+  .tap-hint .arw{display:inline-block;color:var(--gold);margin-left:6px;animation:nudge 1.9s ease-in-out infinite}
   @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
   @media(prefers-reduced-motion:reduce){.tap-hint .arw{animation:none}}
 
   /* ---------- DAY TABS ---------- */
   nav.tabs{
     position:sticky;top:0;z-index:20;
-    background:rgba(20,19,15,.86);
-    backdrop-filter:blur(12px);
+    background:rgba(20,19,15,.9);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line);
   }
   .tabs-inner{
-    max-width:680px;margin:0 auto;
-    display:flex;gap:8px;padding:10px 14px 11px;
+    max-width:var(--maxw);margin:0 auto;
+    display:flex;gap:8px;padding:11px 16px 12px;
   }
   .tab{
-    flex:1;
-    cursor:pointer;
+    flex:1;cursor:pointer;
     background:var(--bg-2);
     border:1px solid var(--line);
     border-radius:13px;
     color:var(--muted);
-    font-family:'Inter';font-size:11px;font-weight:500;
-    letter-spacing:.2em;text-transform:uppercase;
-    padding:10px 6px 11px;
+    font-family:'Inter';font-size:10px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;
+    padding:11px 6px 12px;
     position:relative;
     -webkit-tap-highlight-color:transparent;
     transition:background .2s,border-color .2s,color .2s,transform .12s;
   }
-  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:20px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:3px;color:inherit}
+  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:21px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:4px;color:inherit}
   .tab:hover{background:#272319;border-color:var(--gold-dim);color:var(--ivory)}
   .tab:active{transform:scale(.97)}
   .tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .tab[aria-selected="true"]{
-    background:linear-gradient(rgba(201,168,106,.17),rgba(201,168,106,.07));
+    background:linear-gradient(rgba(201,168,106,.18),rgba(201,168,106,.06));
     border-color:var(--gold);
     color:var(--ivory);
     box-shadow:0 0 0 1px rgba(201,168,106,.22);
@@ -115,62 +170,63 @@
   .tab[aria-selected="true"] .day-label{color:var(--gold)}
 
   /* ---------- SECTIONS ---------- */
-  section.day{display:none;padding-top:40px}
-  section.day.active{display:block;animation:fade .4s ease}
-  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  section.day{display:none;padding-top:44px}
+  section.day.active{display:block;animation:fade .42s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 
-  .day-head{margin-bottom:8px}
+  .day-head{margin-bottom:6px;text-align:center}
   .day-head .kicker{
-    color:var(--gold);font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+    color:var(--gold);font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;
   }
   .day-head h2{
-    font-family:'Cormorant Garamond';font-weight:500;font-size:34px;line-height:1.1;margin-top:6px;
+    font-family:'Cormorant Garamond';font-weight:500;font-size:37px;line-height:1.08;margin-top:10px;letter-spacing:.005em;
   }
-  .day-head p.note{color:var(--muted);font-size:14.5px;margin-top:10px}
+  .day-head p.note{color:var(--muted);font-size:14.5px;margin:14px auto 0;max-width:52ch}
+  .day-head .rule{margin-top:22px}
 
   /* ---------- TIMELINE ---------- */
-  ol.timeline{list-style:none;margin:30px 0 8px;position:relative;padding-left:6px}
+  ol.timeline{list-style:none;margin:34px 0 8px;position:relative;padding-left:6px}
   ol.timeline::before{
-    content:"";position:absolute;left:8px;top:8px;bottom:22px;width:1px;
-    background:linear-gradient(var(--line),var(--line) 70%,transparent);
+    content:"";position:absolute;left:8px;top:9px;bottom:24px;width:1px;
+    background:linear-gradient(var(--line-2),var(--line) 72%,transparent);
   }
-  li.event{position:relative;padding:0 0 26px 34px}
+  li.event{position:relative;padding:0 0 28px 36px}
   li.event::before{
-    content:"";position:absolute;left:3px;top:6px;width:11px;height:11px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--gold-dim);
+    content:"";position:absolute;left:2.5px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:1.5px solid var(--gold-dim);
   }
-  li.event.key::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,106,.16)}
+  li.event.key::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,106,.15)}
   li.event .time{
-    font-family:'Inter';font-size:12.5px;font-weight:600;letter-spacing:.08em;
-    color:var(--gold);text-transform:uppercase;
+    font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.1em;
+    color:var(--gold);text-transform:uppercase;font-variant-numeric:tabular-nums;
   }
-  li.event .title{font-family:'Cormorant Garamond';font-size:22px;font-weight:600;line-height:1.2;margin-top:1px}
-  li.event .desc{color:var(--muted);font-size:14px;margin-top:3px}
+  li.event .title{font-family:'Cormorant Garamond';font-size:23px;font-weight:600;line-height:1.18;margin-top:2px}
+  li.event .desc{color:var(--muted);font-size:14px;margin-top:4px;max-width:46ch}
   li.event .tag{
-    display:inline-block;margin-top:8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--sage);border:1px solid var(--line);border-radius:100px;padding:3px 10px;font-weight:500;
+    display:inline-block;margin-top:9px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sage);border:1px solid var(--line-2);border-radius:100px;padding:4px 11px;font-weight:500;
   }
   li.event .tag.tbd{color:var(--gold);border-color:var(--gold-dim)}
+  li.event.key .title{color:var(--ivory)}
 
-  /* ---------- OPTIONS (choices, not a sequence) ---------- */
-  ul.opts{list-style:none;margin:28px 0 8px;display:flex;flex-direction:column;gap:12px}
+  /* ---------- OPTIONS ---------- */
+  ul.opts{list-style:none;margin:30px 0 8px;display:flex;flex-direction:column;gap:12px}
   li.opt{
     display:flex;gap:16px;
     background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px 18px;
+    padding:17px 19px;
   }
   li.opt .opt-when{
-    flex:0 0 100px;
+    flex:0 0 96px;
     font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.08em;
-    color:var(--gold);text-transform:uppercase;padding-top:3px;
+    color:var(--gold);text-transform:uppercase;padding-top:3px;font-variant-numeric:tabular-nums;
   }
-  li.opt .opt-title{font-family:'Cormorant Garamond';font-size:21px;font-weight:600;line-height:1.2}
-  li.opt .opt-desc{color:var(--muted);font-size:14px;margin-top:3px}
+  li.opt .opt-title{font-family:'Cormorant Garamond';font-size:22px;font-weight:600;line-height:1.2}
+  li.opt .opt-desc{color:var(--muted);font-size:14px;margin-top:4px}
   li.opt .tag{
-    display:inline-block;margin-top:9px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--sage);border:1px solid var(--line);border-radius:100px;padding:3px 10px;font-weight:500;
+    display:inline-block;margin-top:10px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sage);border:1px solid var(--line-2);border-radius:100px;padding:4px 11px;font-weight:500;
   }
-  li.opt .tag.tbd{color:var(--gold);border-color:var(--gold-dim)}
   @media(max-width:470px){
     li.opt{flex-direction:column;gap:5px}
     li.opt .opt-when{flex:none;padding-top:0}
@@ -178,79 +234,102 @@
 
   /* ---------- CARDS ---------- */
   .card{
-    background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:24px 22px;margin-top:22px;box-shadow:var(--shadow);
+    background:linear-gradient(var(--card),var(--card-2));
+    border:1px solid var(--line);border-radius:16px;
+    padding:26px 24px;margin-top:22px;box-shadow:var(--shadow-sm);
+    position:relative;
   }
   .card h3{
-    font-family:'Cormorant Garamond';font-size:24px;font-weight:600;margin-bottom:4px;
-    display:flex;align-items:center;gap:10px;
+    font-family:'Cormorant Garamond';font-size:25px;font-weight:600;margin-bottom:6px;
+    display:flex;align-items:center;gap:11px;letter-spacing:.01em;
   }
-  .card h3 .ic{font-size:15px;color:var(--gold)}
-  .card .lead{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .card h3 .ic{font-size:12px;color:var(--gold);transform:translateY(-2px)}
+  .card .lead{color:var(--muted);font-size:14px;margin-bottom:18px}
 
-  .kv{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+  .kv{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
   .kv:first-of-type{border-top:none}
-  .kv .k{flex:0 0 108px;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+  .kv .k{flex:0 0 104px;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding-top:3px;font-weight:500}
   .kv .v{flex:1;color:var(--ivory)}
-  .kv .v .sm{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-  .kv .v .pill{
-    display:inline-block;margin-top:7px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--gold);border:1px solid var(--gold-dim);border-radius:100px;padding:3px 10px;font-weight:500;
-  }
-  .kv .v .pill.yes{color:var(--sage);border-color:var(--line)}
+  .kv .v .sm{display:block;color:var(--muted);font-size:13px;margin-top:3px;line-height:1.55}
 
   /* section divider */
   .divider{
-    display:flex;align-items:center;gap:14px;margin:46px 0 2px;
-    color:var(--gold);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+    display:flex;align-items:center;gap:16px;margin:50px 0 2px;
+    color:var(--gold);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;
+    white-space:nowrap;
   }
   .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
 
   .btn{
-    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
-    background:var(--gold);color:#20180a;text-decoration:none;
-    font-family:'Inter';font-weight:600;font-size:13px;letter-spacing:.04em;
-    padding:12px 20px;border-radius:100px;transition:transform .15s,background .2s;
+    display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+    background:linear-gradient(var(--gold-2),var(--gold));color:#20180a;text-decoration:none;
+    font-family:'Inter';font-weight:600;font-size:12.5px;letter-spacing:.05em;
+    padding:12px 22px;border-radius:100px;transition:transform .15s,filter .2s;
   }
-  .btn:hover{transform:translateY(-1px);background:#d8b878}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
 
-  /* attire chips */
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  /* attire / bring chips */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
   .chip{
     font-size:13px;background:var(--bg-2);border:1px solid var(--line);
-    border-radius:10px;padding:9px 13px;color:var(--ivory);
+    border-radius:11px;padding:10px 14px;color:var(--ivory);
   }
-  .chip .o{color:var(--sage);font-size:11px;margin-left:6px;letter-spacing:.08em;text-transform:uppercase}
+  .chip .o{color:var(--sage);font-size:10.5px;margin-left:7px;letter-spacing:.08em;text-transform:uppercase}
 
   /* callout */
   .callout{
-    display:flex;gap:14px;background:linear-gradient(var(--bg-2),var(--bg-2));
+    display:flex;gap:16px;align-items:center;
+    background:linear-gradient(var(--bg-2),var(--bg-2));
     border:1px solid var(--gold-dim);border-left:3px solid var(--gold);
-    border-radius:14px;padding:18px 20px;margin-top:22px;
+    border-radius:14px;padding:20px 22px;margin-top:24px;
   }
-  .callout .big{font-family:'Cormorant Garamond';font-size:34px;line-height:1;color:var(--gold);font-weight:600}
+  .callout .big{font-family:'Cormorant Garamond';font-size:40px;line-height:1;color:var(--gold);font-weight:600;flex:none}
   .callout p{font-size:14px;color:var(--ivory)}
   .callout p strong{color:var(--gold);font-weight:600}
 
-  footer{text-align:center;padding:48px 22px 10px;color:var(--muted);font-size:12.5px;letter-spacing:.04em}
-  footer .fdot{color:var(--gold);margin:0 6px}
+  footer{text-align:center;padding:54px 24px 26px;margin-top:20px;border-top:1px solid var(--line)}
+  footer .mono{font-family:'Cormorant Garamond';font-size:26px;color:var(--ivory);font-weight:500}
+  footer .mono .amp{font-style:italic;color:var(--gold-dim)}
+  footer .fdate{margin-top:8px;color:var(--muted);font-size:11.5px;letter-spacing:.28em;text-transform:uppercase}
+  footer .fdot{color:var(--gold);margin:0 8px}
 
   @media(min-width:600px){
-    .kv .k{flex:0 0 130px}
+    .kv .k{flex:0 0 128px}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;color:#1a1712;padding:0}
+    nav.tabs,.tap-hint,.hero .frame,.btn{display:none!important}
+    .hero{border-color:#ddd;padding:24px 0}
+    .eyebrow,.day-head .kicker,li.event .time{color:#8a6d34}
+    .monogram,.day-head h2,li.event .title,.card h3{color:#1a1712}
+    section.day{display:block!important;padding-top:26px;break-inside:avoid}
+    .card,li.opt,.callout{border-color:#ddd;box-shadow:none;background:#faf8f2}
+    .desc,.note,.lead,.kv .k,.kv .v .sm{color:#4a463d!important}
+    ol.timeline::before{background:#ccc}
+    li.event::before{background:#fff;border-color:#b99}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="eyebrow">The Wedding of Ryan &amp; Tanya</div>
-  <h1>Groomsmen<br><span class="amp">&amp;</span> Guide</h1>
-  <div class="sub">Milwaukee <span class="dot">·</span> Sept 11 – 13 <span class="dot">·</span> 2026</div>
-  <div class="tap-hint">Tap a day to see the plan <span class="arw">↓</span></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">The Wedding of</div>
+    <div class="monogram">Ryan<span class="amp">&amp;</span>Tanya</div>
+    <div class="place">Villa Terrace &middot; Milwaukee, Wisconsin</div>
+    <div class="datebar">
+      <span>Fri &ndash; Sun</span><span class="sep"></span><b>September 11 &ndash; 13, 2026</b>
+    </div>
+    <div class="label">Groomsmen Guide</div>
+    <div class="tap-hint">Tap a day to see the plan <span class="arw">&darr;</span></div>
+  </div>
 </header>
 
 <nav class="tabs">
-  <div class="tabs-inner" role="tablist">
+  <div class="tabs-inner" role="tablist" aria-label="Wedding weekend days">
     <button class="tab" role="tab" id="tab-fri" aria-controls="fri" aria-selected="true" data-day="fri">
       Friday <span class="day-label">Sept 11</span>
     </button>
@@ -269,15 +348,14 @@
   <section class="day active" id="fri" role="tabpanel" aria-labelledby="tab-fri">
     <div class="day-head">
       <div class="kicker">The Day Before</div>
-      <h2>Optional hangs &amp; rehearsal</h2>
-      <p class="note">Friday is low-key. Nothing here is mandatory for the crew, it's for anyone already in town. Come to what you want.</p>
+      <div class="rule"><span class="diamond">&#9670;</span></div>
     </div>
 
     <ol class="timeline">
       <li class="event">
         <div class="time">Time TBD</div>
         <div class="title">Ceremony rehearsal</div>
-        <div class="desc">Villa Terrace. Mostly family + the officiant, so groomsmen don't need to be there. Skip it unless you're around and want to swing by.</div>
+        <div class="desc">Villa Terrace. Mostly family and the officiant, so groomsmen don't need to be there. Skip it unless you're around and want to swing by.</div>
         <span class="tag tbd">Ryan will post the time in the group chat</span>
       </li>
       <li class="event key">
@@ -295,7 +373,7 @@
         <div class="opt-when">6:40 PM</div>
         <div>
           <div class="opt-title">Brewers vs. Reds</div>
-          <div class="opt-desc">There's a game that night if you're looking for something to do. Nothing is booked — grab your own tickets if you're interested.</div>
+          <div class="opt-desc">There's a game that night if you're looking for something to do. Nothing is booked &mdash; grab your own tickets if you're interested.</div>
         </div>
       </li>
     </ul>
@@ -306,7 +384,8 @@
     <div class="day-head">
       <div class="kicker">Wedding Day</div>
       <h2>The full run of show</h2>
-      <p class="note">The full run of show, wake-up through send-off. The one hard deadline: be at the venue by 12:30.</p>
+      <p class="note">Wake-up through send-off. The one hard deadline: be at the venue by 12:30.</p>
+      <div class="rule"><span class="diamond">&#9670;</span></div>
     </div>
 
     <ol class="timeline">
@@ -315,12 +394,12 @@
         <div class="title">Wake up</div>
       </li>
       <li class="event">
-        <div class="time">7:00 – 8:00 AM</div>
+        <div class="time">7:00 &ndash; 8:00 AM</div>
         <div class="title">Workout</div>
         <div class="desc">Back around 8:45.</div>
       </li>
       <li class="event">
-        <div class="time">9:00 – 11:00 AM</div>
+        <div class="time">9:00 &ndash; 11:00 AM</div>
         <div class="title">Breakfast &amp; hang</div>
         <div class="desc">Brunch, golf sim, pool.</div>
       </li>
@@ -343,7 +422,7 @@
       <li class="event key">
         <div class="time">4:00 PM</div>
         <div class="title">Ceremony</div>
-        <div class="desc">Doors / seating from 3:30. Ceremony starts at 4:00 sharp in the gardens.</div>
+        <div class="desc">Doors and seating from 3:30. Ceremony starts at 4:00 sharp in the gardens.</div>
       </li>
       <li class="event">
         <div class="time">4:30 PM</div>
@@ -358,7 +437,7 @@
       <li class="event">
         <div class="time">~7:00 PM</div>
         <div class="title">Sunset photos</div>
-        <div class="desc">Ryan &amp; Tanya step out for golden-hour shots. Part of the crew may be pulled in briefly.</div>
+        <div class="desc">Ryan &amp; Tanya step out for golden-hour shots (sunset 7:07). Part of the crew may be pulled in briefly.</div>
       </li>
       <li class="event">
         <div class="time">~10:00 PM</div>
@@ -385,7 +464,7 @@
 
     <!-- DUTIES -->
     <div class="card">
-      <h3><span class="ic">◆</span> What you're actually doing</h3>
+      <h3><span class="ic">&#9670;</span> What you're actually doing</h3>
       <p class="lead">Short version: show up on time, look sharp, follow the coordinator's lead. The specifics:</p>
       <div class="kv">
         <div class="k">Ceremony</div>
@@ -407,7 +486,7 @@
 
     <!-- ATTIRE -->
     <div class="card">
-      <h3><span class="ic">◆</span> What to wear</h3>
+      <h3><span class="ic">&#9670;</span> What to wear</h3>
       <p class="lead">The Black Tux 9-piece. Full black-tie. A few notes on what's required vs. optional:</p>
       <div class="chips">
         <span class="chip">Tuxedo jacket</span>
@@ -424,29 +503,29 @@
 
     <!-- VENUE -->
     <div class="card">
-      <h3><span class="ic">◆</span> The venue</h3>
+      <h3><span class="ic">&#9670;</span> The venue</h3>
       <div class="kv">
         <div class="k">Location</div>
         <div class="v">Villa Terrace Museum &amp; Gardens<span class="sm">2220 N Terrace Ave, Milwaukee, WI 53202</span></div>
       </div>
       <div class="kv">
         <div class="k">Getting there</div>
-        <div class="v">Uber / Lyft recommended. Neighborhood parking is tight.<span class="sm">Pickup + ride details will go in the group chat.</span></div>
+        <div class="v">Uber / Lyft recommended. Neighborhood parking is tight.<span class="sm">Pickup and ride details will go in the group chat.</span></div>
       </div>
       <div class="kv">
         <div class="k">Arrival</div>
-        <div class="v">12:30 PM — dressed and ready</div>
+        <div class="v">12:30 PM &mdash; dressed and ready</div>
       </div>
-      <a class="btn" href="https://maps.google.com/?q=Villa+Terrace+Museum+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">Open in Maps →</a>
+      <a class="btn" href="https://maps.google.com/?q=Villa+Terrace+Museum+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">Open in Maps &rarr;</a>
     </div>
 
     <!-- WHAT TO BRING -->
     <div class="card">
-      <h3><span class="ic">◆</span> Throw in your bag</h3>
+      <h3><span class="ic">&#9670;</span> Throw in your bag</h3>
       <p class="lead">Small stuff that's annoying to need and not have:</p>
       <div class="chips">
         <span class="chip">Garment bag <span class="o">for the return</span></span>
-        <span class="chip">Comfortable shoes <span class="o">for late reception</span></span>
+        <span class="chip">Comfortable shoes <span class="o">late reception</span></span>
         <span class="chip">A layer for after dark</span>
         <span class="chip">Cash <span class="o">bar tips</span></span>
         <span class="chip">Phone charger</span>
@@ -458,7 +537,7 @@
     <div class="divider"><span>Good to know</span></div>
 
     <div class="card">
-      <h3><span class="ic">◆</span> What's covered</h3>
+      <h3><span class="ic">&#9670;</span> What's covered</h3>
       <div class="kv">
         <div class="k">Wedding day</div>
         <div class="v">Open bar</div>
@@ -472,6 +551,7 @@
       <div class="kicker">The Morning After</div>
       <h2>Coffee before you head out</h2>
       <p class="note">Casual send-off for anyone still in town Sunday morning before flights. Come if you can.</p>
+      <div class="rule"><span class="diamond">&#9670;</span></div>
     </div>
 
     <ol class="timeline">
@@ -487,7 +567,8 @@
 </main>
 
 <footer>
-  <div>Ryan <span class="fdot">◆</span> Tanya <span class="fdot">◆</span> 09 · 12 · 2026</div>
+  <div class="mono">Ryan <span class="amp">&amp;</span> Tanya</div>
+  <div class="fdate">09 <span class="fdot">&#9670;</span> 12 <span class="fdot">&#9670;</span> 2026</div>
 </footer>
 
 <script>
