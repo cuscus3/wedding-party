@@ -58,7 +58,7 @@
   header.hero{
     position:relative;
     text-align:center;
-    padding:72px 24px 48px;
+    padding:46px 24px 32px;
     border-bottom:1px solid var(--line);
     overflow:hidden;
   }
@@ -75,48 +75,48 @@
   .hero-inner{position:relative}
   .eyebrow{
     text-transform:uppercase;
-    letter-spacing:.44em;
-    font-size:10.5px;
+    letter-spacing:.42em;
+    font-size:10px;
     font-weight:500;
     color:var(--gold);
-    margin-bottom:24px;
-    padding-left:.44em;
+    margin-bottom:14px;
+    padding-left:.42em;
   }
   .monogram{
     font-family:'Cormorant Garamond';
     font-weight:500;
-    font-size:clamp(52px,15vw,88px);
-    line-height:.92;
-    letter-spacing:.005em;
+    font-size:clamp(40px,10vw,62px);
+    line-height:1;
+    letter-spacing:.01em;
     color:var(--ivory);
   }
   .monogram .amp{
-    display:block;
+    display:inline;
     font-style:italic;
     font-weight:400;
-    font-size:.42em;
+    font-size:.62em;
     color:var(--gold-dim);
-    margin:2px 0;
-    letter-spacing:.04em;
+    margin:0 .16em;
+    letter-spacing:.02em;
   }
   .hero .place{
-    margin-top:22px;
+    margin-top:14px;
     color:var(--ivory-dim);
-    font-size:13px;
-    letter-spacing:.24em;
+    font-size:12.5px;
+    letter-spacing:.22em;
     text-transform:uppercase;
     font-weight:400;
   }
   .hero .datebar{
-    margin-top:18px;
-    display:flex;align-items:center;justify-content:center;gap:14px;
+    margin-top:10px;
+    display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
     color:var(--muted);
-    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   }
   .hero .datebar b{color:var(--gold);font-weight:500}
   .hero .datebar .sep{width:4px;height:4px;border-radius:50%;background:var(--gold-dim);display:inline-block}
   .hero .label{
-    margin-top:30px;
+    margin-top:20px;
     display:inline-block;
     font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;
     color:var(--ivory);
@@ -126,7 +126,7 @@
     background:linear-gradient(rgba(201,168,106,.10),rgba(201,168,106,.03));
   }
   .tap-hint{
-    margin-top:26px;color:var(--muted-2);font-size:10.5px;
+    margin-top:16px;color:var(--muted-2);font-size:10px;
     letter-spacing:.24em;text-transform:uppercase;font-weight:500;
   }
   .tap-hint .arw{display:inline-block;color:var(--gold);margin-left:6px;animation:nudge 1.9s ease-in-out infinite}
@@ -170,7 +170,7 @@
   .tab[aria-selected="true"] .day-label{color:var(--gold)}
 
   /* ---------- SECTIONS ---------- */
-  section.day{display:none;padding-top:44px}
+  section.day{display:none;padding-top:40px;min-height:calc(100vh - 190px)}
   section.day.active{display:block;animation:fade .42s ease}
   @keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 
@@ -299,6 +299,19 @@
     .kv .k{flex:0 0 128px}
   }
 
+  /* ---------- DESKTOP: let it breathe wider ---------- */
+  @media(min-width:900px){
+    :root{--maxw:880px}
+    header.hero{padding:56px 24px 40px}
+    .monogram{font-size:clamp(58px,6vw,76px)}
+    li.event .desc{max-width:64ch}
+    li.opt .opt-desc{max-width:64ch}
+    .day-head p.note{max-width:60ch}
+    .kv .v .sm{max-width:70ch}
+    li.event .title{font-size:24px}
+    .day-head h2{font-size:40px}
+  }
+
   /* ---------- PRINT ---------- */
   @media print{
     body{background:#fff;color:#1a1712;padding:0}
@@ -306,7 +319,7 @@
     .hero{border-color:#ddd;padding:24px 0}
     .eyebrow,.day-head .kicker,li.event .time{color:#8a6d34}
     .monogram,.day-head h2,li.event .title,.card h3{color:#1a1712}
-    section.day{display:block!important;padding-top:26px;break-inside:avoid}
+    section.day{display:block!important;padding-top:26px;min-height:0;break-inside:avoid}
     .card,li.opt,.callout{border-color:#ddd;box-shadow:none;background:#faf8f2}
     .desc,.note,.lead,.kv .k,.kv .v .sm{color:#4a463d!important}
     ol.timeline::before{background:#ccc}
@@ -604,7 +617,8 @@
     });
     days.forEach(s=>s.classList.toggle('active', s.id === tab.dataset.day));
     if(moveFocus) tab.focus();
-    window.scrollTo({top:0,behavior:'smooth'});
+    const nav = document.querySelector('nav.tabs');
+    window.scrollTo({top: nav.offsetTop, behavior:'smooth'});
   }
 
   tabs.forEach((tab,i)=>{
