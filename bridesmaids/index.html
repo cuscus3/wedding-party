@@ -514,7 +514,8 @@
     days.forEach(s=>s.classList.toggle('active', s.id === tab.dataset.day));
     if(moveFocus) tab.focus();
     const nav = document.querySelector('nav.tabs');
-    window.scrollTo({top: nav.offsetTop, behavior:'smooth'});
+    const main = document.querySelector('main.wrap');
+    window.scrollTo({top: Math.max(0, main.offsetTop - nav.offsetHeight), behavior:'smooth'});
   }
   tabs.forEach((tab,i)=>{
     tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
