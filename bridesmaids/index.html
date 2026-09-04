@@ -182,7 +182,7 @@
 
   /* ---------- DESKTOP ---------- */
   @media(min-width:900px){
-    :root{--maxw:880px}
+    :root{--maxw:960px}
     header.hero{padding:54px 22px 38px}
     .monogram{font-size:clamp(58px,6vw,74px)}
     li.event .desc{max-width:64ch}
@@ -191,6 +191,9 @@
     li.event .title{font-size:24px}
     .day-head h2{font-size:40px}
     .hm-grid{grid-template-columns:1fr 1fr 1fr}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    .cards>.card{margin-top:0}
+    .cards>.card.wide{grid-column:1 / -1}
   }
 
   /* ---------- PRINT ---------- */
@@ -390,8 +393,10 @@
       <p><strong>Be at Villa Terrace by 8:00 AM.</strong> Hair and makeup start right away, so arriving on time keeps the whole morning relaxed and on schedule.</p>
     </div>
 
+    <div class="divider"><span>Getting ready</span></div>
+    <div class="cards">
     <!-- HAIR + MAKEUP -->
-    <div class="card">
+    <div class="card wide">
       <h3><span class="ic">&#128132;</span> Hair &amp; makeup</h3>
       <p class="lead">Find your name and time below. Please be ready and available before your appointment so we stay on time.</p>
 
@@ -454,10 +459,8 @@
       <p class="body">We're allowed to bring in an outside coffee order, so we'll collect everyone's coffee orders Friday night and figure out who wants to volunteer for the morning run from there. &#129293;</p>
     </div>
 
-    <div class="divider"><span>Come prepared</span></div>
-
     <!-- BRING -->
-    <div class="card">
+    <div class="card wide">
       <h3><span class="ic">&#128092;</span> What to bring</h3>
       <p class="lead">Everything you'll want for the day:</p>
       <div class="chips">
@@ -475,6 +478,7 @@
         <span class="chip">After-party essentials / change</span>
       </div>
       <p class="body">Pajamas and slippers will be provided by Tanya. &#129293;</p>
+    </div>
     </div>
   </section>
 
