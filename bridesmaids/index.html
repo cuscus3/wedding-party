@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbf5ef">
+<meta name="description" content="Bridesmaids guide for the wedding of Ryan & Tanya. Villa Terrace, Milwaukee · September 12, 2026.">
+<title>Ryan &amp; Tanya · Bridesmaids Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbf5ef;
+    --bg-2:#f5ebe1;
+    --card:#fffbf6;
+    --card-2:#fdf4ec;
+    --line:#ecdccd;
+    --line-2:#e2cdba;
+    --ink:#43352e;
+    --ink-soft:#5f4d43;
+    --muted:#8a7264;
+    --rose:#b06b76;
+    --rose-deep:#98505c;
+    --gold:#b3924f;
+    --sage:#7f9268;
+    --shadow:0 22px 48px -26px rgba(120,80,70,.30);
+    --shadow-sm:0 12px 28px -20px rgba(120,80,70,.28);
+    --maxw:660px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(140% 90% at 50% -8%, rgba(176,107,118,.10), transparent 55%),
+      radial-gradient(120% 60% at 50% 108%, rgba(127,146,104,.07), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    padding-bottom:16px;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ornaments */
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px}
+  .rule::before,.rule::after{content:"";height:1px;width:44px;background:linear-gradient(90deg,transparent,var(--rose))}
+  .rule::after{background:linear-gradient(90deg,var(--rose),transparent)}
+  .heart{color:var(--rose);font-size:12px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;text-align:center;
+    padding:46px 22px 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero .frame{position:absolute;inset:14px;border:1px solid var(--line-2);border-radius:6px;pointer-events:none}
+  .hero .frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(176,107,118,.22);border-radius:3px}
+  .hero-inner{position:relative}
+  .eyebrow{text-transform:uppercase;letter-spacing:.4em;font-size:10px;font-weight:600;color:var(--rose-deep);margin-bottom:13px;padding-left:.4em}
+  .monogram{font-family:'Cormorant Garamond';font-weight:500;font-size:clamp(40px,10vw,62px);line-height:1;letter-spacing:.01em;color:var(--ink)}
+  .monogram .amp{font-style:italic;font-weight:400;font-size:.62em;color:var(--rose);margin:0 .16em}
+  .hero .place{margin-top:13px;color:var(--ink-soft);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .hero .datebar{margin-top:9px;display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;color:var(--muted);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+  .hero .datebar b{color:var(--rose-deep);font-weight:600}
+  .hero .datebar .sep{width:4px;height:4px;border-radius:50%;background:var(--rose);display:inline-block}
+  .hero .label{margin-top:18px;display:inline-block;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--rose-deep);border:1px solid var(--rose);border-radius:100px;padding:8px 18px;background:rgba(176,107,118,.07)}
+  .tap-hint{margin-top:15px;color:var(--muted);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+  .tap-hint .arw{display:inline-block;color:var(--rose);margin-left:6px;animation:nudge 1.9s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  @media(prefers-reduced-motion:reduce){.tap-hint .arw{animation:none}}
+
+  /* ---------- DAY TABS ---------- */
+  nav.tabs{position:sticky;top:0;z-index:20;background:rgba(251,245,239,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .tabs-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:8px;padding:10px 14px 11px}
+  .tab{flex:1;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:13px;color:var(--muted);font-family:'Inter';font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:10px 6px 11px;position:relative;-webkit-tap-highlight-color:transparent;transition:background .2s,border-color .2s,color .2s,transform .12s}
+  .tab .day-label{display:block;font-family:'Cormorant Garamond';font-size:21px;letter-spacing:.02em;text-transform:none;font-weight:600;margin-top:3px;color:inherit}
+  .tab:hover{background:#fff;border-color:var(--rose);color:var(--ink)}
+  .tab:active{transform:scale(.97)}
+  .tab:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+  .tab[aria-selected="true"]{background:linear-gradient(rgba(176,107,118,.14),rgba(176,107,118,.05));border-color:var(--rose);color:var(--ink);box-shadow:0 0 0 1px rgba(176,107,118,.18)}
+  .tab[aria-selected="true"] .day-label{color:var(--rose-deep)}
+
+  /* ---------- AT A GLANCE ---------- */
+  .glance-wrap{max-width:var(--maxw);margin:20px auto 0;padding:0 22px}
+  details.glance{background:linear-gradient(var(--card),var(--card-2));border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-sm);overflow:hidden}
+  details.glance summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-family:'Cormorant Garamond';font-size:22px;font-weight:600;color:var(--ink)}
+  details.glance summary::-webkit-details-marker{display:none}
+  details.glance summary .chev{color:var(--rose);font-size:13px;transition:transform .2s}
+  details.glance[open] summary .chev{transform:rotate(180deg)}
+  .glance-cols{display:grid;grid-template-columns:1fr;gap:2px;padding:0 20px 18px}
+  @media(min-width:560px){.glance-cols{grid-template-columns:1fr 1fr;gap:0 26px}}
+  .glance-col h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;margin:8px 0 6px}
+  .glance-col .g{display:flex;gap:10px;padding:5px 0;font-size:13.5px;border-top:1px solid var(--line)}
+  .glance-col .g:first-of-type{border-top:none}
+  .glance-col .g .gt{flex:0 0 62px;color:var(--rose-deep);font-weight:600;font-variant-numeric:tabular-nums}
+  .glance-col .g .gd{color:var(--ink-soft)}
+  .glance-col .g .gd em{color:var(--muted);font-style:normal;font-size:12px}
+
+  /* ---------- SECTIONS ---------- */
+  section.day{display:none;padding-top:34px;min-height:calc(100vh - 210px)}
+  section.day.active{display:block;animation:fade .42s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+  .day-head{margin-bottom:6px;text-align:center}
+  .day-head .kicker{color:var(--rose-deep);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+  .day-head h2{font-family:'Cormorant Garamond';font-weight:500;font-size:36px;line-height:1.08;margin-top:9px}
+  .day-head p.note{color:var(--ink-soft);font-size:14.5px;margin:13px auto 0;max-width:54ch}
+  .day-head .rule{margin-top:20px}
+
+  /* ---------- TIMELINE ---------- */
+  ol.timeline{list-style:none;margin:32px 0 8px;position:relative;padding-left:6px}
+  ol.timeline::before{content:"";position:absolute;left:8px;top:9px;bottom:24px;width:1px;background:linear-gradient(var(--line-2),var(--line) 72%,transparent)}
+  li.event{position:relative;padding:0 0 26px 34px}
+  li.event::before{content:"";position:absolute;left:2.5px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:1.5px solid var(--rose)}
+  li.event.key::before{background:var(--rose);border-color:var(--rose);box-shadow:0 0 0 4px rgba(176,107,118,.14)}
+  li.event .time{font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--rose-deep);text-transform:uppercase;font-variant-numeric:tabular-nums}
+  li.event .title{font-family:'Cormorant Garamond';font-size:23px;font-weight:600;line-height:1.18;margin-top:1px;color:var(--ink)}
+  li.event .desc{color:var(--ink-soft);font-size:14px;margin-top:4px;max-width:48ch}
+  li.event .desc strong{color:var(--rose-deep);font-weight:600}
+  li.event .tag{display:inline-block;margin-top:9px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);border:1px solid var(--line-2);border-radius:100px;padding:4px 11px;font-weight:600}
+  a.tag.map{color:var(--rose-deep);border-color:var(--rose);text-decoration:none;transition:background .15s,border-color .15s}
+  a.tag.map:hover{background:rgba(176,107,118,.10)}
+
+  /* ---------- CARDS ---------- */
+  .card{background:linear-gradient(var(--card),var(--card-2));border:1px solid var(--line);border-radius:16px;padding:24px 22px;margin-top:20px;box-shadow:var(--shadow-sm)}
+  .card h3{font-family:'Cormorant Garamond';font-size:25px;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .card h3 .ic{font-size:17px}
+  .card .lead{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .card p.body{color:var(--ink-soft);font-size:14px;margin-top:10px}
+  .card p.body strong{color:var(--rose-deep)}
+
+  .kv{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+  .kv:first-of-type{border-top:none}
+  .kv .k{flex:0 0 100px;color:var(--rose-deep);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px;font-weight:700}
+  .kv .v{flex:1;color:var(--ink)}
+  .kv .v .sm{display:block;color:var(--muted);font-size:13px;margin-top:3px;line-height:1.55}
+
+  /* menu / bring lists */
+  .list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-soft)}
+  .list li .b{color:var(--rose);flex:none;margin-top:.1em}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{font-size:13px;background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:9px 13px;color:var(--ink)}
+  .chip .o{color:var(--sage);font-size:10.5px;margin-left:6px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* hair + makeup appointment cards */
+  .hm-label{margin:20px 0 2px;display:flex;align-items:center;gap:9px;font-family:'Cormorant Garamond';font-size:22px;font-weight:600;color:var(--ink)}
+  .hm-grid{display:grid;grid-template-columns:1fr;gap:11px;margin-top:12px}
+  @media(min-width:520px){.hm-grid{grid-template-columns:1fr 1fr}}
+  .appt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+  .appt .slot{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--rose-deep);text-transform:uppercase;font-variant-numeric:tabular-nums;margin-bottom:7px}
+  .appt .who{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)}
+  .appt .who:first-of-type{border-top:none}
+  .appt .who .stylist{color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase}
+  .appt .who .name{font-family:'Cormorant Garamond';font-size:20px;font-weight:600;color:var(--ink)}
+  .appt.solo{text-align:left}
+  .appt.solo .name{font-family:'Cormorant Garamond';font-size:23px;font-weight:600;color:var(--ink)}
+  .appt .sub{display:block;font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0;margin-top:1px}
+
+  /* callout */
+  .callout{display:flex;gap:14px;align-items:flex-start;background:rgba(176,107,118,.07);border:1px solid var(--rose);border-left:3px solid var(--rose);border-radius:14px;padding:16px 18px;margin-top:20px}
+  .callout .big{font-size:22px;line-height:1;flex:none}
+  .callout p{font-size:13.5px;color:var(--ink)}
+  .callout p strong{color:var(--rose-deep);font-weight:600}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:44px 0 2px;color:var(--rose-deep);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  footer{text-align:center;padding:44px 22px 24px;margin-top:20px;border-top:1px solid var(--line)}
+  footer .mono{font-family:'Cormorant Garamond';font-size:25px;color:var(--ink);font-weight:500}
+  footer .mono .amp{font-style:italic;color:var(--rose)}
+  footer .fdate{margin-top:7px;color:var(--muted);font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+  footer .love{margin-top:12px;color:var(--rose-deep);font-family:'Cormorant Garamond';font-style:italic;font-size:17px}
+
+  @media(min-width:600px){.kv .k{flex:0 0 122px}}
+
+  /* ---------- DESKTOP ---------- */
+  @media(min-width:900px){
+    :root{--maxw:880px}
+    header.hero{padding:54px 22px 38px}
+    .monogram{font-size:clamp(58px,6vw,74px)}
+    li.event .desc{max-width:64ch}
+    .day-head p.note{max-width:60ch}
+    .kv .v .sm{max-width:70ch}
+    li.event .title{font-size:24px}
+    .day-head h2{font-size:40px}
+    .hm-grid{grid-template-columns:1fr 1fr 1fr}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;color:#2a211c;padding:0}
+    nav.tabs,.tap-hint,.hero .frame{display:none!important}
+    details.glance{display:none!important}
+    section.day{display:block!important;padding-top:24px;min-height:0;break-inside:avoid}
+    .card,.appt,.callout{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="frame" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">The Wedding of</div>
+    <div class="monogram">Ryan<span class="amp">&amp;</span>Tanya</div>
+    <div class="place">Villa Terrace &middot; Milwaukee, Wisconsin</div>
+    <div class="datebar"><span>Fri &ndash; Sun</span><span class="sep"></span><b>September 11 &ndash; 13, 2026</b></div>
+    <div class="label">Bridesmaids Guide &#129293;</div>
+    <div class="tap-hint">Tap a day to see the plan <span class="arw">&darr;</span></div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner" role="tablist" aria-label="Wedding weekend days">
+    <button class="tab" role="tab" id="tab-fri" aria-controls="fri" aria-selected="true" data-day="fri">Friday <span class="day-label">Sept 11</span></button>
+    <button class="tab" role="tab" id="tab-sat" aria-controls="sat" aria-selected="false" data-day="sat">Saturday <span class="day-label">Sept 12</span></button>
+    <button class="tab" role="tab" id="tab-sun" aria-controls="sun" aria-selected="false" data-day="sun">Sunday <span class="day-label">Sept 13</span></button>
+  </div>
+</nav>
+
+<div class="glance-wrap">
+  <details class="glance" open>
+    <summary>At a glance <span class="chev">&#9660;</span></summary>
+    <div class="glance-cols">
+      <div class="glance-col">
+        <h4>Friday</h4>
+        <div class="g"><span class="gt">12:00</span><span class="gd">Lunch <em>&middot; optional</em></span></div>
+        <div class="g"><span class="gt">3:00</span><span class="gd">Rehearsal <em>&middot; optional</em></span></div>
+        <div class="g"><span class="gt">6:00</span><span class="gd">Family Dinner <em>&middot; family/cousins</em></span></div>
+      </div>
+      <div class="glance-col">
+        <h4>Saturday</h4>
+        <div class="g"><span class="gt">8:00</span><span class="gd">Bridesmaids arrive</span></div>
+        <div class="g"><span class="gt">12:00</span><span class="gd">Photo/video begins</span></div>
+        <div class="g"><span class="gt">1:30</span><span class="gd">First look</span></div>
+        <div class="g"><span class="gt">2:15</span><span class="gd">Wedding party photos</span></div>
+        <div class="g"><span class="gt">4:00</span><span class="gd">Ceremony</span></div>
+        <div class="g"><span class="gt">4:30</span><span class="gd">Cocktail hour</span></div>
+        <div class="g"><span class="gt">5:45</span><span class="gd">Dinner seating</span></div>
+        <div class="g"><span class="gt">8:15</span><span class="gd">Dancing &amp; 2nd entrance</span></div>
+        <div class="g"><span class="gt">10:30</span><span class="gd">Reception ends</span></div>
+        <div class="g"><span class="gt">After</span><span class="gd">After-party &middot; 7Seventy7 rooftop</span></div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<main class="wrap">
+
+  <!-- ===================== FRIDAY ===================== -->
+  <section class="day active" id="fri" role="tabpanel" aria-labelledby="tab-fri">
+    <div class="day-head">
+      <div class="kicker">Welcome to Milwaukee &#129293;</div>
+      <h2>The day before</h2>
+      <p class="note">Friday is low-key. Everything here is optional, so come to what you can and enjoy the city.</p>
+      <div class="rule"><span class="heart">&#10084;</span></div>
+    </div>
+
+    <ol class="timeline">
+      <li class="event">
+        <div class="time">12:00 PM</div>
+        <div class="title">Wedding party lunch</div>
+        <div class="desc">Optional! If you're already in Milwaukee, come join Tanya, Ryan, and the wedding party for light snacks and drinks at Lakefront Brewery. If you're still traveling or have other plans, absolutely no worries.</div>
+        <a class="tag map" href="https://maps.google.com/?q=Lakefront+Brewery+1872+N+Commerce+St+Milwaukee+WI" target="_blank" rel="noopener">Lakefront Brewery &#8599;</a>
+      </li>
+      <li class="event">
+        <div class="time">3:00 PM</div>
+        <div class="title">Ceremony rehearsal</div>
+        <div class="desc">Also optional. We'll do a quick 30 to 45 minute run-through so everyone can see the space. If you can't make it, don't stress. During the ceremony the bridesmaids and groomsmen alternate walking down the aisle and then take their seats, so it's very easy to pick up on wedding day.</div>
+        <a class="tag map" href="https://maps.google.com/?q=Villa+Terrace+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">Villa Terrace &#8599;</a>
+      </li>
+      <li class="event">
+        <div class="time">6:00 PM</div>
+        <div class="title">Family dinner</div>
+        <div class="desc"><strong>Family and cousins:</strong> you'll join us for family dinner on the 7Seventy7 rooftop. Everyone else has the evening free to explore Milwaukee, grab dinner, and enjoy the city!</div>
+        <a class="tag map" href="https://maps.google.com/?q=7Seventy7+777+N+Van+Buren+St+Milwaukee+WI" target="_blank" rel="noopener">7Seventy7 Rooftop &#8599;</a>
+      </li>
+      <li class="event">
+        <div class="time">Evening</div>
+        <div class="title">Friday night in Milwaukee</div>
+        <div class="desc">No official wedding-party plans tonight, the city is yours! FYI the Milwaukee Brewers play the Cincinnati Reds at 6:45 PM if you're looking for something fun to do.</div>
+        <a class="tag map" href="https://maps.google.com/?q=American+Family+Field+Milwaukee+WI" target="_blank" rel="noopener">American Family Field &#8599;</a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===================== SATURDAY ===================== -->
+  <section class="day" id="sat" role="tabpanel" aria-labelledby="tab-sat">
+    <div class="day-head">
+      <div class="kicker">Wedding Day &#129346;</div>
+      <h2>The full run of show</h2>
+      <p class="note">The whole day, from morning in the bridal suite to the after-party. The big one: be at Villa Terrace by 8:00 AM.</p>
+      <div class="rule"><span class="heart">&#10084;</span></div>
+    </div>
+
+    <ol class="timeline">
+      <li class="event key">
+        <div class="time">8:00 AM</div>
+        <div class="title">Bridesmaids arrive</div>
+        <div class="desc">Please plan to be at Villa Terrace (Bridal Suite) by 8:00 so we can settle in and start hair and makeup right away. We'll spend the morning together getting ready, eating, drinking mimosas, taking photos, and getting excited!</div>
+        <a class="tag map" href="https://maps.google.com/?q=Villa+Terrace+2220+N+Terrace+Ave+Milwaukee+WI" target="_blank" rel="noopener">2220 N Terrace Ave &#8599;</a>
+      </li>
+      <li class="event key">
+        <div class="time">12:00 PM</div>
+        <div class="title">Cameras arrive</div>
+        <div class="desc">Photography, videography, and our content creator start arriving. We'll take getting-ready photos and video together, including some cute shots in our getting-ready looks. Tanya is providing matching pajamas and slippers for everyone! Heads up: the museum is open to the public until 2:00, so there may be guests around parts of the property.</div>
+      </li>
+      <li class="event">
+        <div class="time">1:00 PM</div>
+        <div class="title">Final getting ready</div>
+        <div class="desc">Hair and makeup should be wrapping up. Tanya gets into her dress (Hala to zip her in), and bridesmaids start getting fully dressed. Goal: everyone completely dressed and photo-ready by 2:00.</div>
+      </li>
+      <li class="event">
+        <div class="time">1:30 PM</div>
+        <div class="title">First look &#129293;</div>
+        <div class="desc">Tanya and Ryan have their first look and couple portraits. Bridesmaids can finish last-minute touch-ups and be ready for wedding-party photos.</div>
+      </li>
+      <li class="event key">
+        <div class="time">2:15 PM</div>
+        <div class="title">Wedding party photos</div>
+        <div class="desc">Everyone fully dressed and photo-ready! We'll head from Villa Terrace down to the gardens (we'll likely walk the stairs together, totally manageable), then the shuttle brings us back up before guests arrive.</div>
+      </li>
+      <li class="event">
+        <div class="time">3:15 PM</div>
+        <div class="title">Photos wrap + freshen up</div>
+        <div class="desc">Hard stop around 3:15. Head back inside to freshen up, touch up hair and makeup, and grab water. Guests start arriving around 3:30, so we'll stay tucked away from guest areas.</div>
+      </li>
+      <li class="event">
+        <div class="time">3:30 PM</div>
+        <div class="title">Ceremony time &#127807;</div>
+        <div class="desc">The bridal party takes the last shuttle down to the gardens before the ceremony. There's a Prosecco cart in the gardens, so enjoy a welcome drink after the ceremony.</div>
+      </li>
+      <li class="event key">
+        <div class="time">4:00 PM</div>
+        <div class="title">Ceremony begins</div>
+        <div class="desc">Bridesmaids and groomsmen alternate walking down the aisle, then take their seats for the ceremony.</div>
+      </li>
+      <li class="event">
+        <div class="time">4:30 PM</div>
+        <div class="title">Cocktail hour &#129346;</div>
+        <div class="desc"><strong>Needed for family photos?</strong> Stay down in the gardens after the ceremony. <strong>Not needed?</strong> Grab a Prosecco and take the shuttle up to the courtyard for cocktail hour with appetizers, drinks, and live music. Tanya and Ryan join after family photos.</div>
+      </li>
+      <li class="event">
+        <div class="time">5:45 PM</div>
+        <div class="title">Dinner seating</div>
+        <div class="desc">Guests are called to their seats. The bar closes temporarily from 5:45 to 6:30 while catering transitions into dinner, so grab anything you want beforehand.</div>
+        <span class="tag">Bar closed 5:45&ndash;6:30</span>
+      </li>
+      <li class="event key">
+        <div class="time">6:00 PM</div>
+        <div class="title">Reception begins</div>
+        <div class="desc">Tanya and Ryan's introduction, then cake cutting, first dance, and welcome speeches, into dinner (salad first, then dinner plates). Dessert and coffee go out by 7:45 on the credenza in the guest hall near the terrace. Grab some once it's out, and let others know!</div>
+      </li>
+      <li class="event key">
+        <div class="time">8:15 PM</div>
+        <div class="title">Let's party &#128131;</div>
+        <div class="desc">Tanya and Ryan make their second entrance with Lebanese drummers and saxophone, followed by Lebanese dancing and then open dancing.</div>
+      </li>
+      <li class="event">
+        <div class="time">9:00 PM</div>
+        <div class="title">Late-night pizza &#127829;</div>
+      </li>
+      <li class="event">
+        <div class="time">10:15 PM</div>
+        <div class="title">Last call + last song</div>
+      </li>
+      <li class="event key">
+        <div class="time">10:30 PM</div>
+        <div class="title">Reception ends</div>
+        <div class="desc">Official end of the reception. Then up to the rooftop for the after-party!</div>
+      </li>
+      <li class="event key">
+        <div class="time">After 10:30 PM</div>
+        <div class="title">After-party &#127769;</div>
+        <div class="desc">Not ready for the night to end? We're keeping it going on the 7Seventy7 rooftop with beer and drinks on us. Please let Tanya or Ryan know if you're coming so we can add you to the building guest list. Uber/Lyft is easiest, and street parking is around too, so plan accordingly if you'll be drinking.</div>
+        <a class="tag map" href="https://maps.google.com/?q=7Seventy7+777+N+Van+Buren+St+Milwaukee+WI" target="_blank" rel="noopener">7Seventy7 Rooftop &#8599;</a>
+      </li>
+    </ol>
+
+    <div class="callout">
+      <div class="big">&#128337;</div>
+      <p><strong>Be at Villa Terrace by 8:00 AM.</strong> Hair and makeup start right away, so arriving on time keeps the whole morning relaxed and on schedule.</p>
+    </div>
+
+    <!-- HAIR + MAKEUP -->
+    <div class="card">
+      <h3><span class="ic">&#128132;</span> Hair &amp; makeup</h3>
+      <p class="lead">Find your name and time below. Please be ready and available before your appointment so we stay on time.</p>
+
+      <div class="hm-label"><span class="heart">&#10084;</span> Hair</div>
+      <div class="hm-grid">
+        <div class="appt">
+          <div class="slot">8:00 &ndash; 8:45 AM</div>
+          <div class="who"><span class="name">Tanya<span class="sub">Bridal set / prep</span></span><span class="stylist">Val</span></div>
+          <div class="who"><span class="name">Malak</span><span class="stylist">Stylist 2</span></div>
+          <div class="who"><span class="name">Gabby</span><span class="stylist">Stylist 3</span></div>
+        </div>
+        <div class="appt">
+          <div class="slot">8:45 &ndash; 9:30 AM</div>
+          <div class="who"><span class="name">Hala</span><span class="stylist">Val</span></div>
+          <div class="who"><span class="name">Nada</span><span class="stylist">Stylist 2</span></div>
+          <div class="who"><span class="name">Nikayla</span><span class="stylist">Stylist 3</span></div>
+        </div>
+        <div class="appt">
+          <div class="slot">9:30 &ndash; 10:15 AM</div>
+          <div class="who"><span class="name">Haifa</span><span class="stylist">Stylist 2</span></div>
+          <div class="who"><span class="name" style="color:var(--muted)">Buffer / open</span><span class="stylist">Others</span></div>
+        </div>
+        <div class="appt">
+          <div class="slot">10:30 &ndash; 11:45 AM</div>
+          <div class="who"><span class="name">Tanya<span class="sub">Finish bridal style</span></span><span class="stylist">Val</span></div>
+        </div>
+      </div>
+      <p class="body">Val will also be available toward the end for Tanya's final hair and veil touch-ups before getting dressed.</p>
+
+      <div class="hm-label"><span class="heart">&#10084;</span> Makeup</div>
+      <div class="hm-grid">
+        <div class="appt solo"><div class="slot">8:00 &ndash; 9:00 AM</div><span class="name">Haifa</span></div>
+        <div class="appt solo"><div class="slot">9:00 &ndash; 10:00 AM</div><span class="name">Malak</span></div>
+        <div class="appt solo"><div class="slot">10:00 &ndash; 11:00 AM</div><span class="name">Nada</span></div>
+        <div class="appt solo"><div class="slot">11:00 &ndash; 11:45 AM</div><span class="name">Hala</span></div>
+        <div class="appt solo"><div class="slot">11:45 &ndash; 1:00 PM</div><span class="name">Tanya</span></div>
+      </div>
+      <p class="body">If you're not actively in hair or makeup, relax, eat, hang out, and take pictures! The hair and makeup team leaves after we head out around 1:00, so please bring items to touch up if needed.</p>
+    </div>
+
+    <!-- MORNING FOOD -->
+    <div class="card">
+      <h3><span class="ic">&#129360;</span> Morning food &amp; drinks</h3>
+      <p class="lead">There'll be food to graze on throughout the morning:</p>
+      <ul class="list">
+        <li><span class="b">&#10084;</span> Croissant egg pesto sandwiches</li>
+        <li><span class="b">&#10084;</span> Charcuterie, macarons, and fresh fruit</li>
+        <li><span class="b">&#10084;</span> Mimosas &#129346; and water</li>
+      </ul>
+      <p class="body">If you know you'll need something more substantial before our 2:15 photos, bring a small personal snack like a protein bar to keep in your bag.</p>
+      <div class="callout">
+        <div class="big">&#127775;</div>
+        <p><strong>Venue note:</strong> Villa Terrace doesn't allow outside catering or alcohol, so please don't bring outside alcohol. Keep small personal snacks for yourself discreet, hehe.</p>
+      </div>
+    </div>
+
+    <!-- COFFEE RUN -->
+    <div class="card">
+      <h3><span class="ic">&#9749;</span> Coffee run</h3>
+      <p class="body">We're allowed to bring in an outside coffee order, so we'll collect everyone's coffee orders Friday night and figure out who wants to volunteer for the morning run from there. &#129293;</p>
+    </div>
+
+    <div class="divider"><span>Come prepared</span></div>
+
+    <!-- BRING -->
+    <div class="card">
+      <h3><span class="ic">&#128092;</span> What to bring</h3>
+      <p class="lead">Everything you'll want for the day:</p>
+      <div class="chips">
+        <span class="chip">Bridesmaid dress</span>
+        <span class="chip">Wedding shoes</span>
+        <span class="chip">Dancing shoes <span class="o">if you want</span></span>
+        <span class="chip">Jewelry &amp; accessories</span>
+        <span class="chip">Undergarments</span>
+        <span class="chip">Touch-up makeup / lipstick</span>
+        <span class="chip">Hair touch-up items</span>
+        <span class="chip">Deodorant / perfume</span>
+        <span class="chip">Phone charger / battery</span>
+        <span class="chip">Personal medications</span>
+        <span class="chip">A small snack <span class="o">if needed</span></span>
+        <span class="chip">After-party essentials / change</span>
+      </div>
+      <p class="body">Pajamas and slippers will be provided by Tanya. &#129293;</p>
+    </div>
+  </section>
+
+  <!-- ===================== SUNDAY ===================== -->
+  <section class="day" id="sun" role="tabpanel" aria-labelledby="tab-sun">
+    <div class="day-head">
+      <div class="kicker">The Morning After &#9749;</div>
+      <h2>Coffee before you head out</h2>
+      <p class="note">A casual send-off for anyone still in town Sunday morning before flights or the drive home. Come if you can!</p>
+      <div class="rule"><span class="heart">&#10084;</span></div>
+    </div>
+
+    <ol class="timeline">
+      <li class="event key">
+        <div class="time">Sunday morning</div>
+        <div class="title">Coffee at Colectivo</div>
+        <div class="desc">Come on over before you head out! It's a cute coffee spot right by the lake with lots of outdoor seating and an easy stop if you're driving home. Grab a coffee, hang out for a bit, and say goodbye before everyone heads out. &#129293;</div>
+        <a class="tag map" href="https://maps.google.com/?q=Colectivo+Coffee+1701+N+Lincoln+Memorial+Dr+Milwaukee+WI+53202" target="_blank" rel="noopener">1701 N Lincoln Memorial Dr &#8599;</a>
+        <span class="tag">Time in the group chat</span>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="mono">Ryan <span class="amp">&amp;</span> Tanya</div>
+  <div class="fdate">09 &middot; 12 &middot; 2026</div>
+  <div class="love">Come ready to have the best day. I love you all! &#129293;</div>
+</footer>
+
+<script>
+  const tabs = [...document.querySelectorAll('.tab')];
+  const days = [...document.querySelectorAll('section.day')];
+  function select(tab, moveFocus){
+    tabs.forEach(t=>{const on = t === tab; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;});
+    days.forEach(s=>s.classList.toggle('active', s.id === tab.dataset.day));
+    if(moveFocus) tab.focus();
+    const nav = document.querySelector('nav.tabs');
+    window.scrollTo({top: nav.offsetTop, behavior:'smooth'});
+  }
+  tabs.forEach((tab,i)=>{
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+    tab.addEventListener('click',()=>select(tab));
+    tab.addEventListener('keydown',e=>{
+      const keys = ['ArrowRight','ArrowLeft','Home','End'];
+      if(!keys.includes(e.key)) return;
+      e.preventDefault();
+      const n = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+      select(tabs[n], true);
+    });
+  });
+</script>
+
+</body>
+</html>

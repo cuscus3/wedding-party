@@ -5,3 +5,5 @@
 # Explicitly allow the files that belong on GitHub.
 !/.gitignore
 !/index.html
+!/bridesmaids/
+!/bridesmaids/**
